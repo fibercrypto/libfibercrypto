@@ -1,0 +1,3 @@
+[submodule "vendor/github.com/fibercrypto/FiberCryptoWallet"]
+	path = vendor/github.com/fibercrypto/FiberCryptoWallet
+	url = https://github.com/fibercrypto/FiberCryptoWallet
