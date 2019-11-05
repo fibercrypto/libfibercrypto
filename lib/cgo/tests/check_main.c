@@ -12,7 +12,15 @@
 
 START_TEST(TestRegisterSkycoinPlugin) {
   printf("Load TestRegisterSkycoinPlugin \n");
-  ck_assert_int_eq(FC_OK, 1);
+
+  GoString SkycoinTicker = {"SKY", 3};
+  GoString CoinHoursTicker = {"SKYCH", 5};
+
+  GoUint8_ bufferTemp[1024];
+  GoString_ Temp = {bufferTemp, 0};
+
+  GoUint32 err = FC_util_AltcoinCaption(CoinHoursTicker, &Temp);
+  ck_assert_str_eq(Temp.p, "Skycoin");
 }
 END_TEST
 
@@ -22,5 +30,6 @@ Suite *check_main(void) {
   tc = tcase_create("check_main");
   tcase_add_checked_fixture(tc, setup, teardown);
   tcase_add_test(tc, TestRegisterSkycoinPlugin);
+  suite_add_tcase(s, tc);
   return s;
 }
