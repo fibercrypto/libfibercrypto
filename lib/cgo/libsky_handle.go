@@ -43,8 +43,8 @@ func closeHandle(handle Handle) {
 	delete(handleMap, handle)
 }
 
-//export SKY_handle_close
-func SKY_handle_close(handle C.Handle) {
+//export FC_handle_close
+func FC_handle_close(handle C.Handle) {
 	closeHandle(Handle(handle))
 }
 func registerStringsHandle(obj []string) C.Strings__Handle {

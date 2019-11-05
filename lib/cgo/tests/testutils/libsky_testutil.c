@@ -13,6 +13,9 @@
 #define JSON_FILE_SIZE 4096
 #define JSON_BIG_FILE_SIZE 102400
 
+// Define function SKY_handle_close to avoid including libskycoin.h
+void SKY_handle_close(Handle p0);
+
 extern int MEMPOOLIDX;
 extern void *MEMPOOL[1024 * 256];
 
@@ -21,6 +24,8 @@ json_value *JSON_POOL[128];
 
 int HANDLEPOOLIDX = 0;
 Handle HANDLE_POOL[128];
+
+int WALLETPOOLIDX = 0;
 
 int stdout_backup;
 int pipefd[2];
@@ -33,26 +38,6 @@ void freeRegisteredMemCleanup(void *p) {
       MEMPOOL[i] = NULL;
       break;
     }
-  }
-}
-
-void cleanupMem() {
-  int i;
-
-  void **ptr;
-  for (i = MEMPOOLIDX, ptr = MEMPOOL; i; --i) {
-    if (*ptr)
-      memset(ptr, 0, sizeof(void *));
-    ptr++;
-  }
-  for (i = JSONPOOLIDX, ptr = (void *)JSON_POOL; i; --i) {
-    if (*ptr)
-      json_value_free(*ptr);
-    ptr++;
-  }
-  for (i = 0; i < HANDLEPOOLIDX; i++) {
-    if (HANDLE_POOL[i])
-      SKY_handle_close(HANDLE_POOL[i]);
   }
 }
 
@@ -96,8 +81,29 @@ void closeRegisteredHandle(Handle handle) {
   for (i = 0; i < HANDLEPOOLIDX; i++) {
     if (HANDLE_POOL[i] == handle) {
       HANDLE_POOL[i] = 0;
+      FC_handle_close(handle);
       break;
     }
+  }
+}
+
+void cleanupMem() {
+  int i;
+
+  void **ptr;
+  for (i = MEMPOOLIDX, ptr = MEMPOOL; i; --i) {
+    if (*ptr)
+      memset(ptr, 0, sizeof(void *));
+    ptr++;
+  }
+  for (i = JSONPOOLIDX, ptr = (void *)JSON_POOL; i; --i) {
+    if (*ptr)
+      json_value_free(*ptr);
+    ptr++;
+  }
+  for (i = 0; i < HANDLEPOOLIDX; i++) {
+    if (HANDLE_POOL[i])
+      FC_handle_close(HANDLE_POOL[i]);
   }
 }
 
@@ -139,7 +145,7 @@ void setup(void) { srand(time(NULL)); }
 
 void teardown(void) { cleanupMem(); }
 
-// TODO: Move to libFC_io.c
+// TODO: Move to libsky_io.c
 void fprintbuff(FILE *f, void *buff, size_t n) {
   unsigned char *ptr = (unsigned char *)buff;
   fprintf(f, "[ ");
