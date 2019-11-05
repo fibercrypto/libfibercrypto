@@ -104,9 +104,9 @@ build-libc-dbg: configure-build build-libc-static build-libc-shared
 test-libc: build-libc ## Run tests for libfibercrypto C client library
 	echo "Compiling with $(CC) $(CC_VERSION) $(STDC_FLAG)"
 	$(eval TESTS_SRC := $(shell ls $(LIB_DIR)/cgo/tests/*.c | grep -v test_main_hw.c))
-	$(CC) -o $(BIN_DIR)/test_libfibercrypto_shared $(TESTS_SRC) $(LIB_DIR)/cgo/tests/testutils/*.c                     $(LDLIBS) $(LDFLAGS)
+	$(CC) -o $(BIN_DIR)/test_libfibercrypto_shared $(TESTS_SRC) $(LIB_DIR)/cgo/tests/testutils/*.c -lfibercrypto                    $(LDLIBS) $(LDFLAGS)
 	$(CC) -o $(BIN_DIR)/test_libfibercrypto_static $(TESTS_SRC) $(LIB_DIR)/cgo/tests/testutils/*.c $(BUILDLIB_DIR)/libfibercrypto.a $(LDLIBS) $(LDFLAGS)
-	$(LDPATHVAR)="$(LDPATH):$(BUILD_DIR)/usr/lib:$(BUILDLIB_DIR)" $(BIN_DIR)/test_libfibercrypto_shared
+	$(LDPATHVAR)="$(LDPATH):$(BUILD_DIR)/usr/lib:$(BUILDLIB_DIR)" $(BIN_DIR)/test_libfibercrypto_shared -lfibercrypto
 	$(LDPATHVAR)="$(LDPATH):$(BUILD_DIR)/usr/lib"         $(BIN_DIR)/test_libfibercrypto_static
 
 

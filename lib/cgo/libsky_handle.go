@@ -39,6 +39,14 @@ func overwriteHandle(handle C.Handle, obj interface{}) bool {
 	return false
 }
 
+func closeHandle(handle Handle) {
+	delete(handleMap, handle)
+}
+
+//export SKY_handle_close
+func SKY_handle_close(handle C.Handle) {
+	closeHandle(Handle(handle))
+}
 func registerStringsHandle(obj []string) C.Strings__Handle {
 	return (C.Strings__Handle)(registerHandle(obj))
 }

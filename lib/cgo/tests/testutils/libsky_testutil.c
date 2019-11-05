@@ -9,13 +9,9 @@
 #include <time.h>
 #include <unistd.h>
 #define BUFFER_SIZE 1024
-#define stableWalletName "integration-test.wlt"
 #define STRING_SIZE 128
 #define JSON_FILE_SIZE 4096
 #define JSON_BIG_FILE_SIZE 102400
-#define TEST_DATA_DIR "src/cli/integration/testdata/"
-#define stableEncryptWalletName "integration-test-encrypted.wlt"
-
 
 extern int MEMPOOLIDX;
 extern void *MEMPOOL[1024 * 256];
@@ -37,6 +33,26 @@ void freeRegisteredMemCleanup(void *p) {
       MEMPOOL[i] = NULL;
       break;
     }
+  }
+}
+
+void cleanupMem() {
+  int i;
+
+  void **ptr;
+  for (i = MEMPOOLIDX, ptr = MEMPOOL; i; --i) {
+    if (*ptr)
+      memset(ptr, 0, sizeof(void *));
+    ptr++;
+  }
+  for (i = JSONPOOLIDX, ptr = (void *)JSON_POOL; i; --i) {
+    if (*ptr)
+      json_value_free(*ptr);
+    ptr++;
+  }
+  for (i = 0; i < HANDLEPOOLIDX; i++) {
+    if (HANDLE_POOL[i])
+      SKY_handle_close(HANDLE_POOL[i]);
   }
 }
 
@@ -121,7 +137,7 @@ json_value *loadJsonFile(const char *filename) {
 
 void setup(void) { srand(time(NULL)); }
 
-void teardown(void) {;}
+void teardown(void) { cleanupMem(); }
 
 // TODO: Move to libFC_io.c
 void fprintbuff(FILE *f, void *buff, size_t n) {
