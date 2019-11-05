@@ -1,10 +1,10 @@
 #ifndef TEST_MAIN_H
 #define TEST_MAIN_H
 #include "libfibercrypto.h"
-#include "skyerrors.h"
-#include "skystring.h"
-#include "skytest.h"
-#include "skytypes.h"
+#include "fcerrors.h"
+#include "fcstring.h"
+#include "fctest.h"
+#include "fctypes.h"
 #include <check.h>
 #include <stdio.h>
 #include <stdlib.h>

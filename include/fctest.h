@@ -1,11 +1,11 @@
 
 #include "json.h"
 #include "libfibercrypto.h"
-#include "skyassert.h"
-#include "skytypes.h"
+#include "fcassert.h"
+#include "fctypes.h"
 
-#ifndef LIBSKY_TEST_H
-#define LIBSKY_TEST_H
+#ifndef LIBFC_TEST_H
+#define LIBFC_TEST_H
 
 /*----------------------------------------------------------------------
  * I/O

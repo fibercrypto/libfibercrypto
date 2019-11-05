@@ -1,6 +1,6 @@
 #include "check.h"
-#include "skyassert.h"
-#include "skystring.h"
+#include "fcassert.h"
+#include "fcstring.h"
 #include <string.h>
 
 GoInt equalSlices(GoSlice* slice1, GoSlice* slice2, int elem_size)

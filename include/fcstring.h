@@ -1,5 +1,5 @@
-#ifndef LIBSKY_STRING_H
-#define LIBSKY_STRING_H
+#ifndef LIBFC_STRING_H
+#define LIBFC_STRING_H
 
 #include "libfibercrypto.h"
 #include <stdio.h>
@@ -27,4 +27,4 @@ extern int string_has_prefix(const char* str, const char* prefix);
 
 extern int count_words(const char* str, int length);
 
-#endif //LIBSKY_STRING_H
+#endif //LIBFC_STRING_H

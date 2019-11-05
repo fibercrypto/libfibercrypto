@@ -1,5 +1,5 @@
 
-#include "skystring.h"
+#include "fcstring.h"
 
 #define ALPHANUM "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 #define ALPHANUM_LEN 62

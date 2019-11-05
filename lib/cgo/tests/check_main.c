@@ -4,15 +4,16 @@
 #include <check.h>
 #include <string.h>
 
+#include "fcassert.h"
+#include "fcerrors.h"
+#include "fcstring.h"
+#include "fctest.h"
 #include "libfibercrypto.h"
-#include "skyassert.h"
-#include "skyerrors.h"
-#include "skystring.h"
-#include "skytest.h"
 
-START_TEST(TestRegisterSkycoinPlugin) { 
-  
- }
+START_TEST(TestRegisterSkycoinPlugin) {
+  printf("Load TestRegisterSkycoinPlugin \n");
+  ck_assert_int_eq(FC_OK, 1);
+}
 END_TEST
 
 Suite *check_main(void) {
@@ -20,6 +21,6 @@ Suite *check_main(void) {
   TCase *tc;
   tc = tcase_create("check_main");
   tcase_add_checked_fixture(tc, setup, teardown);
-  // tcase_add_test(tc, TestRegisterSkycoinPlugin);
+  tcase_add_test(tc, TestRegisterSkycoinPlugin);
   return s;
 }

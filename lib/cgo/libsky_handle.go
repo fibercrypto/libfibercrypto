@@ -6,7 +6,7 @@ package main
   #include <stdlib.h>
 
 
-  #include "skytypes.h"
+  #include "fctypes.h"
 */
 import "C"
 

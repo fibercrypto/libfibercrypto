@@ -6,7 +6,7 @@ package main
   #include <stdlib.h>
 
 
-  #include "skytypes.h"
+  #include "fctypes.h"
 */
 import "C"
 
@@ -27,14 +27,3 @@ func SKY_JsonEncode_Handle(handle C.Handle, json_string *C.GoString_) uint32 {
 	return FC_BAD_HANDLE
 }
 
-// //export SKY_Handle_Progress_GetCurrent
-// func SKY_Handle_Progress_GetCurrent(handle C.Handle, current *uint64) uint32 {
-// 	obj, ok := lookupHandle(C.Handle(handle))
-// 	if ok {
-// 		if obj, isOK := (obj).(*daemon.BlockchainProgress); isOK {
-// 			*current = obj.Current
-// 			return SKY_OK
-// 		}
-// 	}
-// 	return SKY_BAD_HANDLE
-// }

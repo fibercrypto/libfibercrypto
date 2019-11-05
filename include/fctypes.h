@@ -1,6 +1,6 @@
 
-#ifndef SKYTYPES_H
-#define SKYTYPES_H
+#ifndef FCTYPES_H
+#define FCTYPES_H
 
 #include <inttypes.h>
 #ifndef __SIZE_TYPE__
@@ -134,7 +134,7 @@ typedef struct {
 } GoSlice_;
 
 
-#include "skytypes.gen.h"
+#include "fctypes.gen.h"
 
 /**
  * Memory handles returned back to the caller and manipulated

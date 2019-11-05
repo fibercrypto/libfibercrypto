@@ -8,7 +8,7 @@ import (
 /*
 	#include <string.h>
 
-  #include "skytypes.h"
+  #include "fctypes.h"
 
 	void eos(char *str, int len) {
 		str[len] = 0;
