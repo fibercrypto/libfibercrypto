@@ -19,7 +19,7 @@ START_TEST(TestRegisterSkycoinPlugin) {
   GoUint8_ bufferTemp[1024];
   GoString_ Temp = {bufferTemp, 0};
 
-  GoUint32 err = FC_util_AltcoinCaption(CoinHoursTicker, &Temp);
+  GoUint32 err = FC_util_AltcoinCaption(SkycoinTicker, &Temp);
   ck_assert_str_eq(Temp.p, "Skycoin");
 }
 END_TEST
