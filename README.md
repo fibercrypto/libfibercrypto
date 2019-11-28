@@ -1,7 +1,7 @@
 
 ![](https://repository-images.githubusercontent.com/165332391/de95dc00-7cec-11e9-8fcb-d42fbd8e3577)
 
-# Skycoin C library
+# FiberCrypto C library
 
 [![Build Status](https://travis-ci.com/fibercrypto/libfibercrypto.svg)](https://travis-ci.com/fibercrypto/libfibercrypto)
 
