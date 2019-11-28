@@ -53,3 +53,4 @@ dkms.conf
 bin/test_libfibercrypto_shared
 bin/test_libfibercrypto_static
 include/libfibercrypto.h
+.directory
