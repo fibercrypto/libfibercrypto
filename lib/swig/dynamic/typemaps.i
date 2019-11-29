@@ -20,8 +20,10 @@
 
 %apply int* OUTPUT {GoInt*}
 %apply int* OUTPUT {GoUint*}
-// %apply int* OUTPUT {GoUint8*}
+%apply int* OUTPUT {GoUint8*}
 %apply int* OUTPUT {GoInt8*}
 %apply int* OUTPUT {GoUint16*}
 %apply int* OUTPUT {GoInt16*}
 %apply int* OUTPUT {GoInt32*}
+%apply long* OUTPUT {GoInt64*}
+%apply long* OUTPUT {GoUint64*}
