@@ -14,8 +14,8 @@ import (
 	"encoding/json"
 )
 
-//export SKY_JsonEncode_Handle
-func SKY_JsonEncode_Handle(handle C.Handle, json_string *C.GoString_) uint32 {
+//export FC_JsonEncode_Handle
+func FC_JsonEncode_Handle(handle C.Handle, json_string *C.GoString_) uint32 {
 	obj, ok := lookupHandle(handle)
 	if ok {
 		jsonBytes, err := json.Marshal(obj)
@@ -26,4 +26,3 @@ func SKY_JsonEncode_Handle(handle C.Handle, json_string *C.GoString_) uint32 {
 	}
 	return FC_BAD_HANDLE
 }
-
