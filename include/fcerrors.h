@@ -12,8 +12,8 @@
 #endif
 #endif
 
-#ifndef SKY_ERRORS_H
-#define SKY_ERRORS_H
+#ifndef FC_ERRORS_H
+#define FC_ERRORS_H
 
 // Generic error conditions
 #define FC_OK 0

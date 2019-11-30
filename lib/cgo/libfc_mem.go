@@ -17,9 +17,7 @@ import (
 */
 import "C"
 
-const (
-// SizeofRipemd160         = unsafe.Sizeof(C.cipher__Ripemd160{})
-)
+const ()
 
 /**
  * Copy helpers
