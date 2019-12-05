@@ -17,7 +17,7 @@ LIBSRC_SKYSRCREL_PATH  = ../../../..
 # --- Relative path to libfibercrypto vendor directory
 LIBVENDOR_REL_PATH     = vendor
 # --- Relative path to Skycoin source code submodule
-SKYSRC_REL_PATH        = $(LIBVENDOR_REL_PATH)/github.com/fibercryto/FiberCryptoWallet
+SKYSRC_REL_PATH        = $(LIBVENDOR_REL_PATH)/github.com/fibercryto/fibercryptowallet
 # --- Relative path to Skycoin vendor directory
 SKYVENDOR_REL_PATH     = $(SKYSRC_REL_PATH)/vendor
 
