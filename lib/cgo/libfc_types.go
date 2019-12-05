@@ -1,11 +1,10 @@
 package main
 
 import (
-	sky "github.com/fibercrypto/FiberCryptoWallet/src/coin/skycoin/models"
-	"github.com/fibercrypto/FiberCryptoWallet/src/core"
-	local "github.com/fibercrypto/FiberCryptoWallet/src/main"
-
-	util "github.com/fibercrypto/FiberCryptoWallet/src/util"
+	sky "github.com/fibercrypto/fibercryptowallet/src/coin/skycoin/models"
+	"github.com/fibercrypto/fibercryptowallet/src/core"
+	local "github.com/fibercrypto/fibercryptowallet/src/main"
+	"github.com/fibercrypto/fibercryptowallet/src/util"
 )
 
 func callNode() {

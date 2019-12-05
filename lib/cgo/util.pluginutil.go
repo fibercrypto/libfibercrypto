@@ -1,8 +1,6 @@
 package main
 
-import (
-	util "github.com/fibercrypto/FiberCryptoWallet/src/util"
-)
+import "github.com/fibercrypto/fibercryptowallet/src/util"
 
 /*
 
