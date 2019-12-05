@@ -15,6 +15,7 @@ START_TEST(TestRegisterSkycoinPlugin) {
 
   GoString SkycoinTicker = {"SKY", 3};
   GoString CoinHoursTicker = {"SKYCH", 5};
+  GoString CalculatedHoursTicker = {"SKYCHC", 6};
 
   GoUint8_ bufferTemp[1024];
   GoString_ Temp = {bufferTemp, 0};
@@ -23,6 +24,8 @@ START_TEST(TestRegisterSkycoinPlugin) {
   ck_assert_str_eq(Temp.p, "Skycoin");
   FC_util_AltcoinCaption(CoinHoursTicker, &Temp);
   ck_assert_str_eq(Temp.p, "Coin Hours");
+    FC_util_AltcoinCaption(CalculatedHoursTicker, &Temp);
+  ck_assert_str_eq(Temp.p, "Calculated Hours");
 }
 END_TEST
 
