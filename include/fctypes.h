@@ -133,7 +133,6 @@ typedef struct {
               ///< size.
 } GoSlice_;
 
-
 #include "fctypes.gen.h"
 
 /**

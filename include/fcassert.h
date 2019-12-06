@@ -1,8 +1,8 @@
 #ifndef LIBFC_ASSERT_H
 #define LIBFC_ASSERT_H
 
-#include "libfibercrypto.h"
 #include "fcerrors.h"
+#include "libfibercrypto.h"
 
 extern GoInt isGoStringEq(GoString string1, GoString string2);
 
