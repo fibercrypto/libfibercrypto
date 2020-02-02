@@ -54,3 +54,10 @@ bin/test_libfibercrypto_shared
 bin/test_libfibercrypto_static
 include/libfibercrypto.h
 .directory
+bin
+build
+
+
+# IDE
+.idea
+.vscode
