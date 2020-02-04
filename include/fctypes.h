@@ -146,5 +146,12 @@ typedef GoInt64_ Handle;
  * String Slice Handle
  */
 typedef Handle Strings__Handle;
+typedef Handle core__SecKey;
+typedef Handle core__PubKey;
+typedef Handle core__Address;
+typedef Handle core__AddressIterator;
+typedef Handle core__TxnSigner;
+typedef Handle core__TxnSignerIterator;
+typedef Handle core__CryptoAccount;
 
 #endif
