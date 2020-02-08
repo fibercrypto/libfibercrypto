@@ -146,12 +146,19 @@ typedef GoInt64_ Handle;
  * String Slice Handle
  */
 typedef Handle Strings__Handle;
-typedef Handle core__SecKey;
-typedef Handle core__PubKey;
-typedef Handle core__Address;
-typedef Handle core__AddressIterator;
-typedef Handle core__TxnSigner;
-typedef Handle core__TxnSignerIterator;
-typedef Handle core__CryptoAccount;
 
+/**
+ * AltcoinPlugin__Handle Handle, interface core.AltcoinPlugin
+ */
+typedef Handle AltcoinPlugin__Handle;
+
+/**
+ * TxnSigner__Handle Handle, interface core.TxnSigner
+ */
+typedef Handle TxnSigner__Handle;
+
+/**
+ * Wallet__Handle Handle, interface core.Wallet
+ */
+typedef Handle Wallet__Handle;
 #endif

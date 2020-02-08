@@ -1,5 +1,9 @@
 package main
 
+import (
+	"github.com/fibercrypto/fibercryptowallet/src/core"
+)
+
 /*
 
   #include <string.h>
@@ -59,4 +63,44 @@ func lookupStringsHandle(handle C.Strings__Handle) ([]string, bool) {
 		}
 	}
 	return nil, false
+}
+
+func lookupAltcoinPluginHandle(handle C.AltcoinPlugin__Handle) (*core.AltcoinPlugin, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.AltcoinPlugin); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerAltcoinPluginHandle(obj *core.AltcoinPlugin) C.AltcoinPlugin__Handle {
+	return (C.AltcoinPlugin__Handle)(registerHandle(obj))
+}
+
+func lookupWalletHandle(handle C.Wallet__Handle) (*core.Wallet, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.Wallet); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerWalletHandle(obj *core.Wallet) C.Wallet__Handle {
+	return (C.Wallet__Handle)(registerHandle(obj))
+}
+func lookupTxnSignerHandle(handle C.TxnSigner__Handle) (*core.TxnSigner, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.TxnSigner); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerTxnSignerHandle(obj *core.TxnSigner) C.TxnSigner__Handle {
+	return (C.TxnSigner__Handle)(registerHandle(obj))
 }
