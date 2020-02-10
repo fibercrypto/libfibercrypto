@@ -71,13 +71,13 @@ func FC_util_StringInList(_s string, _list []string, _arg2 *bool) (____error_cod
 }
 
 //export FC_util_AddressFromString
-func FC_util_AddressFromString(_addrs, _coinTicket string, _arg1 *C.core__Address) (____error_code uint32) {
+func FC_util_AddressFromString(_addrs, _coinTicket string, _arg1 *C.Address__Handle) (____error_code uint32) {
 	addrs := _addrs
 	coinTicket := _coinTicket
 	__arg1, ____return_err := util.AddressFromString(addrs, coinTicket)
 	____error_code = libErrorCode(____return_err)
 	if ____return_err == nil {
-		*_arg1 = *(*C.core__Address)(unsafe.Pointer(&__arg1))
+		*_arg1 = registerAddressHandle(&__arg1)
 	}
 	return
 }
