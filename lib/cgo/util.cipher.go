@@ -1,10 +1,9 @@
 package main
 
 import (
+	util "github.com/fibercrypto/fibercryptowallet/src/util"
 	"reflect"
 	"unsafe"
-
-	util "github.com/fibercrypto/fibercryptowallet/src/util"
 )
 
 /*
@@ -75,9 +74,9 @@ func FC_util_GenericAddress_String(_ga *C.util__GenericAddress, _arg0 *C.GoStrin
 }
 
 //export FC_util_GenericAddress_GetCryptoAccount
-func FC_util_GenericAddress_GetCryptoAccount(_ga *C.util__GenericAddress, _arg0 *C.core__CryptoAccount) (____error_code uint32) {
+func FC_util_GenericAddress_GetCryptoAccount(_ga *C.util__GenericAddress, _arg0 *C.CryptoAccount__Handle) (____error_code uint32) {
 	ga := (*util.GenericAddress)(unsafe.Pointer(_ga))
 	__arg0 := ga.GetCryptoAccount()
-	*_arg0 = *(*C.core__CryptoAccount)(unsafe.Pointer(&__arg0))
+	*_arg0 = registerCryptoAccountHandle(&__arg0)
 	return
 }

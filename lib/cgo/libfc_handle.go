@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/fibercrypto/fibercryptowallet/src/core"
+	"github.com/fibercrypto/fibercryptowallet/src/util"
 )
 
 /*
@@ -92,6 +93,7 @@ func lookupWalletHandle(handle C.Wallet__Handle) (*core.Wallet, bool) {
 func registerWalletHandle(obj *core.Wallet) C.Wallet__Handle {
 	return (C.Wallet__Handle)(registerHandle(obj))
 }
+
 func lookupTxnSignerHandle(handle C.TxnSigner__Handle) (*core.TxnSigner, bool) {
 	obj, ok := lookupHandle(C.Handle(handle))
 	if ok {
@@ -103,4 +105,69 @@ func lookupTxnSignerHandle(handle C.TxnSigner__Handle) (*core.TxnSigner, bool) {
 }
 func registerTxnSignerHandle(obj *core.TxnSigner) C.TxnSigner__Handle {
 	return (C.TxnSigner__Handle)(registerHandle(obj))
+}
+
+func lookupCryptoAccountHandle(handle C.CryptoAccount__Handle) (*core.CryptoAccount, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.CryptoAccount); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerCryptoAccountHandle(obj *core.CryptoAccount) C.CryptoAccount__Handle {
+	return (C.CryptoAccount__Handle)(registerHandle(obj))
+}
+
+func lookupAddressHandle(handle C.Address__Handle) (*core.Address, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.Address); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerAddressHandle(obj *core.Address) C.Address__Handle {
+	return (C.Address__Handle)(registerHandle(obj))
+}
+
+func lookupGenericOutputHandle(handle C.GenericOutput__Handle) (*util.GenericOutput, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*util.GenericOutput); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerGenericOutputHandle(obj *util.GenericOutput) C.GenericOutput__Handle {
+	return (C.GenericOutput__Handle)(registerHandle(obj))
+}
+
+func lookupTxnSignerIteratorHandle(handle C.TxnSignerIterator__Handle) (*core.TxnSignerIterator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.TxnSignerIterator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerTxnSignerIteratorHandle(obj *core.TxnSignerIterator) C.TxnSignerIterator__Handle {
+	return (C.TxnSignerIterator__Handle)(registerHandle(obj))
+}
+
+func lookupTransactionHandle(handle C.Transaction__Handle) (*core.Transaction, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.Transaction); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerTransactionHandle(obj *core.Transaction) C.Transaction__Handle {
+	return (C.Transaction__Handle)(registerHandle(obj))
 }

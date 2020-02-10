@@ -1,0 +1,1 @@
+typedef  GoString_ core__UID;

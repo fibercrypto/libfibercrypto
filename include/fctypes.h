@@ -161,4 +161,14 @@ typedef Handle TxnSigner__Handle;
  * Wallet__Handle Handle, interface core.Wallet
  */
 typedef Handle Wallet__Handle;
+
+/**
+ * CryptoAccount__Handle Handle, interface core.CryptoAccount
+ */
+typedef Handle CryptoAccount__Handle;
+
+/**
+ * C.Address__Handle Handle, interface core.Address
+ */
+typedef Handle Address__Handle;
 #endif

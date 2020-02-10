@@ -120,11 +120,8 @@ docs-libc: ## Generate libfibercrypto documentation
 docs: docs-libc ## Generate documentation for all libraries
 
 lint: ## Run linters. Use make install-linters first.
-	vendorcheck ./...
 	# lib/cgo needs separate linting rules
 	golangci-lint run -c .golangci.yml ./lib/cgo/...
-	# The govet version in golangci-lint is out of date and has spurious warnings, run it separately
-	go vet -all ./...
 
 lint-libc: format-libc
 	# Linter LIBC
