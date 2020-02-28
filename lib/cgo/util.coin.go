@@ -1,7 +1,7 @@
 package main
 
 import (
-	util "github.com/fibercrypto/fibercryptowallet/src/util"
+	"github.com/fibercrypto/fibercryptowallet/src/util"
 	"reflect"
 )
 
