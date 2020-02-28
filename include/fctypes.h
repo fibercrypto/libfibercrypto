@@ -202,6 +202,22 @@ typedef Handle KeyValueStore__Handle;
  */
 typedef Handle InputSignDescriptor__Handle;
 
+/**
+ * SimpleWalletOutput__Handle Handle, struct util.SimpleWalletOutput
+ */
+typedef Handle SimpleWalletOutput__Handle;
+
+/**
+ * TransactionOutput__Handle Handle, interface core.TransactionOutput
+ */
+typedef Handle TransactionOutput__Handle;
+
+/**
+ * SimpleWalletAddress__Handle Handle, struct util.SimpleWalletAddress
+ */
+typedef Handle SimpleWalletAddress__Handle;
+
+
 // Callbacks
 
 /**

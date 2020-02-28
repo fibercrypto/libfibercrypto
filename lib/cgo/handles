@@ -20,3 +20,6 @@ CGOGEN HANDLES mocks__Address|AddressMocks
 CGOGEN HANDLES core__InputSignDescriptor|InputSignDescriptor
 CGOGEN TYPES_CONVERSION core__PasswordReader|PasswordReader
 CGOGEN SLICE Checksum|core
+CGOGEN HANDLES util__SimpleWalletOutput|SimpleWalletOutput
+CGOGEN HANDLES core__TransactionOutput|TransactionOutput
+CGOGEN HANDLES util__SimpleWalletAddress|SimpleWalletAddress

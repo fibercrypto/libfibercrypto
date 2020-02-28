@@ -183,3 +183,42 @@ func lookupKeyValueStoreHandle(handle C.KeyValueStore__Handle) (*core.KeyValueSt
 func registerKeyValueStoreHandle(obj *core.KeyValueStore) C.KeyValueStore__Handle {
 	return (C.KeyValueStore__Handle)(registerHandle(obj))
 }
+
+func lookupSimpleWalletOutputHandle(handle C.SimpleWalletOutput__Handle) (*util.SimpleWalletOutput, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*util.SimpleWalletOutput); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerSimpleWalletOutputHandle(obj *util.SimpleWalletOutput) C.SimpleWalletOutput__Handle {
+	return (C.SimpleWalletOutput__Handle)(registerHandle(obj))
+}
+
+func lookupTransactionOutputHandle(handle C.TransactionOutput__Handle) (*core.TransactionOutput, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.TransactionOutput); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerTransactionOutputHandle(obj *core.TransactionOutput) C.TransactionOutput__Handle {
+	return (C.TransactionOutput__Handle)(registerHandle(obj))
+}
+
+func lookupSimpleWalletAddressHandle(handle C.SimpleWalletAddress__Handle) (*util.SimpleWalletAddress, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*util.SimpleWalletAddress); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerSimpleWalletAddressHandle(obj *util.SimpleWalletAddress) C.SimpleWalletAddress__Handle {
+	return (C.SimpleWalletAddress__Handle)(registerHandle(obj))
+}
