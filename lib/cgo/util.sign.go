@@ -1,9 +1,11 @@
 package main
 
 import (
+	"errors"
+	"unsafe"
+
 	core "github.com/fibercrypto/fibercryptowallet/src/core"
 	util "github.com/fibercrypto/fibercryptowallet/src/util"
-	"unsafe"
 )
 
 /*
@@ -12,6 +14,7 @@ import (
   #include <stdlib.h>
 
   #include "fctypes.h"
+  #include "fccallback.h"
 */
 import "C"
 
@@ -98,7 +101,7 @@ func FC_util_ReadyForTxn(_signerID *C.core__UID, _wallet *C.Wallet__Handle, _txn
 }
 
 //export FC_util_SignTransaction
-func FC_util_SignTransaction(_signerID *C.core__UID, _txn *C.Transaction__Handle, _pwd *C.core__PasswordReader, _indices []string, _arg4 *C.Transaction__Handle) (____error_code uint32) {
+func FC_util_SignTransaction(_signerID *C.core__UID, _txn *C.Transaction__Handle, _pwd *C.PasswordReader, _indices []string, _arg4 *C.Transaction__Handle) (____error_code uint32) {
 	signerID := *(*core.UID)(unsafe.Pointer(_signerID))
 	__txn, oktxn := lookupTransactionHandle(*_txn)
 	if !oktxn {
@@ -106,7 +109,19 @@ func FC_util_SignTransaction(_signerID *C.core__UID, _txn *C.Transaction__Handle
 		return
 	}
 	txn := *__txn
-	pwd := *(*core.PasswordReader)(unsafe.Pointer(_pwd))
+	pwd := func(pString string, pKVS core.KeyValueStore) (string, error) {
+		var pStringOut C.GoString_
+		var pStringIn C.GoString_
+		copyString(pString, &pStringIn)
+		pKVSHandle := registerKeyValueStoreHandle(&pKVS)
+		result := C.callPasswordReader(_pwd, pStringIn, pKVSHandle, &pStringOut)
+		closeHandle(Handle(pKVSHandle))
+		if result == FC_OK {
+			pStringOut_ := *(*string)(unsafe.Pointer(&pStringOut))
+			return string(pStringOut_), nil
+		}
+		return "", errors.New("Error in PasswdReader")
+	}
 	indices := *(*[]string)(unsafe.Pointer(&_indices))
 	__arg4, ____return_err := util.SignTransaction(signerID, txn, pwd, indices)
 	____error_code = libErrorCode(____return_err)
@@ -145,7 +160,7 @@ func FC_util_LookupSignServiceForWallet(_wlt *C.Wallet__Handle, _signerID *C.cor
 }
 
 //export FC_util_GenericMultiWalletSign
-func FC_util_GenericMultiWalletSign(_txn *C.Transaction__Handle, _signSpec []C.core__InputSignDescriptor, _pwd *C.core__PasswordReader, _arg3 *C.Transaction__Handle) (____error_code uint32) {
+func FC_util_GenericMultiWalletSign(_txn *C.Transaction__Handle, _signSpec *C.InputSignDescriptor__Handle, _pwd *C.PasswordReader, _arg3 *C.Transaction__Handle) (____error_code uint32) {
 	__txn, oktxn := lookupTransactionHandle(*_txn)
 	if !oktxn {
 		____error_code = FC_BAD_HANDLE
@@ -153,7 +168,20 @@ func FC_util_GenericMultiWalletSign(_txn *C.Transaction__Handle, _signSpec []C.c
 	}
 	txn := *__txn
 	signSpec := *(*[]core.InputSignDescriptor)(unsafe.Pointer(&_signSpec))
-	pwd := *(*core.PasswordReader)(unsafe.Pointer(_pwd))
+	// type PasswordReader func(string, KeyValueStore) (string, error)
+	pwd := func(pString string, pKVS core.KeyValueStore) (string, error) {
+		var pStringOut C.GoString_
+		var pStringIn C.GoString_
+		copyString(pString, &pStringIn)
+		pKVSHandle := registerKeyValueStoreHandle(&pKVS)
+		result := C.callPasswordReader(_pwd, pStringIn, pKVSHandle, &pStringOut)
+		closeHandle(Handle(pKVSHandle))
+		if result == FC_OK {
+			pStringOut_ := *(*string)(unsafe.Pointer(&pStringOut))
+			return string(pStringOut_), nil
+		}
+		return "", errors.New("Error in PasswdReader")
+	}
 	__arg3, ____return_err := util.GenericMultiWalletSign(txn, signSpec, pwd)
 	____error_code = libErrorCode(____return_err)
 	if ____return_err == nil {
