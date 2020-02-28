@@ -17,5 +17,6 @@ CGOGEN HANDLES core__Storage|Storage
 CGOGEN HANDLES core__Contact|Contact
 CGOGEN HANDLES core__StringAddress|StringAddress
 CGOGEN HANDLES mocks__Address|AddressMocks
+CGOGEN HANDLES core__InputSignDescriptor|InputSignDescriptor
 CGOGEN TYPES_CONVERSION core__PasswordReader|PasswordReader
 CGOGEN SLICE Checksum|core

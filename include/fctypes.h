@@ -72,14 +72,16 @@ typedef double GoFloat64_;
 /**
  * Instances of Go `complex` type.
  */
-typedef struct {
+typedef struct
+{
   float real;
   float imaginary;
 } GoComplex64_;
 /**
  * Instances of Go `complex` type.
  */
-typedef struct {
+typedef struct
+{
   double real;
   double imaginary;
 } GoComplex128_;
@@ -98,7 +100,8 @@ typedef char
 /**
  * Instances of Go `string` type.
  */
-typedef struct {
+typedef struct
+{
   const char *p; ///< Pointer to string characters buffer.
   GoInt_ n;      ///< String size not counting trailing `\0` char
                  ///< if at all included.
@@ -116,7 +119,8 @@ typedef void *GoChan_;
 /**
  * Instances of Go interface types.
  */
-typedef struct {
+typedef struct
+{
   void *t; ///< Pointer to the information of the concrete Go type
            ///< bound to this interface reference.
   void *v; ///< Pointer to the data corresponding to the value
@@ -125,7 +129,8 @@ typedef struct {
 /**
  * Instances of Go slices
  */
-typedef struct {
+typedef struct
+{
   void *data; ///< Pointer to buffer containing slice data.
   GoInt_ len; ///< Number of items stored in slice buffer
   GoInt_ cap; ///< Maximum number of items that fits in this slice
@@ -168,7 +173,47 @@ typedef Handle Wallet__Handle;
 typedef Handle CryptoAccount__Handle;
 
 /**
- * C.Address__Handle Handle, interface core.Address
+ * Address__Handle Handle, interface core.Address
  */
 typedef Handle Address__Handle;
+
+/**
+ * GenericOutput__Handle Handle, interface util.GenericOutput
+ */
+typedef Handle GenericOutput__Handle;
+
+/**
+ * TxnSignerIterator__Handle Handle, interface core.TxnSignerIterator
+ */
+typedef Handle TxnSignerIterator__Handle;
+
+/**
+ * Transaction__Handle Handle, interface core.Transaction
+ */
+typedef Handle Transaction__Handle;
+
+/**
+ * KeyValueStore__Handle Handle, interface core.KeyValueStore
+ */
+typedef Handle KeyValueStore__Handle;
+
+/**
+ * InputSignDescriptor__Handle Handle, interface core.KeyValueStore
+ */
+typedef Handle InputSignDescriptor__Handle;
+
+// Callbacks
+
+/**
+ *  PasswordReaderFunc callback , func(string, KeyValueStore) (string, error)
+ */
+
+typedef GoUint32_ (*PasswordReaderFunc)(GoString_ pString, KeyValueStore__Handle pKeyValue, GoString_ *pStringOut, void *context);
+
+typedef struct
+{
+  PasswordReaderFunc callback;
+  void *context;
+} PasswordReader;
+
 #endif

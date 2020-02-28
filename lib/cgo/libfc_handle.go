@@ -25,7 +25,6 @@ var (
 func registerHandle(obj interface{}) C.Handle {
 	handlesCounter++
 	handle := handlesCounter
-	//handle := *(*Handle)(unsafe.Pointer(&obj))
 	handleMap[Handle(handle)] = obj
 	return (C.Handle)(handle)
 }
@@ -170,4 +169,17 @@ func lookupTransactionHandle(handle C.Transaction__Handle) (*core.Transaction, b
 }
 func registerTransactionHandle(obj *core.Transaction) C.Transaction__Handle {
 	return (C.Transaction__Handle)(registerHandle(obj))
+}
+
+func lookupKeyValueStoreHandle(handle C.KeyValueStore__Handle) (*core.KeyValueStore, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.KeyValueStore); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerKeyValueStoreHandle(obj *core.KeyValueStore) C.KeyValueStore__Handle {
+	return (C.KeyValueStore__Handle)(registerHandle(obj))
 }
