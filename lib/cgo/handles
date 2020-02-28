@@ -9,5 +9,13 @@ CGOGEN HANDLES core__TxnSignerIterator|TxnSignerIterator
 CGOGEN HANDLES core__CryptoAccount|CryptoAccount
 CGOGEN HANDLES core__Transaction|Transaction
 CGOGEN HANDLES util__GenericOutput|GenericOutput
-
+CGOGEN HANDLES core__KeyValueStore|KeyValueStore
+CGOGEN HANDLES util__KeyValueMap|KeyValueMap
+CGOGEN HANDLES util__KeyValuesWithDefaults|KeyValuesWithDefaults
+CGOGEN HANDLES core__AddressBook|AddressBook
+CGOGEN HANDLES core__Storage|Storage
+CGOGEN HANDLES core__Contact|Contact
+CGOGEN HANDLES core__StringAddress|StringAddress
+CGOGEN HANDLES mocks__Address|AddressMocks
+CGOGEN TYPES_CONVERSION core__PasswordReader|PasswordReader
 CGOGEN SLICE Checksum|core
