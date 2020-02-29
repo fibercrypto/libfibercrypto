@@ -23,7 +23,7 @@ install:
   - go get github.com/mitchellh/gox
   - make install-linters
   - make dep
-  - make -C ./vendor/github.com/fibercrypto/fibercryptowallet/ install-deps
+  - make -C ./vendor/github.com/fibercrypto/fibercryptowallet/ install-deps-no-envs
   - make install-deps
 script:
   - make build
