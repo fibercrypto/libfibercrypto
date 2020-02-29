@@ -13,4 +13,4 @@ cd check-0.12.0 && ./configure --prefix=/usr --disable-static && make && sudo ma
 
 sudo apt-get -y install build-essential libglu1-mesa-dev libpulse-dev libglib2.0-dev
 sudo apt-get --no-install-recommends install libqt*5-dev qt*5-dev qml-module-qtquick-* qt*5-doc-html
-export GO111MODULE=off; go get -v github.com/therecipe/qt/cmd/... && $(GOPATH)/bin/qtsetup -test=false
+export GO111MODULE=off; go get -v github.com/therecipe/qt/cmd/... && $GOPATH/bin/qtsetup -test=false
