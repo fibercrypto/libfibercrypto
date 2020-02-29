@@ -19,7 +19,7 @@ env:
     - PATH_DIR: "$GOPATH/src/github.com/fibercypto/libfibercrypto/"
 install:
   # Install gox
-  - go get github.com/gz-c/gox
+  - go get github.com/mitchellh/gox
   - go get -t ./...
   - make install-linters
   - make install-deps-libc
