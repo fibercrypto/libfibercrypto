@@ -9,6 +9,7 @@ matrix:
     - os: osx
 before_install:
   - ./ci-scripts/install-travis-gcc.sh
+  - ./ci-scripts/docker_install_ubuntu.sh
   - go get -u github.com/golang/dep/cmd/dep
 env:
   global:
@@ -23,7 +24,6 @@ install:
   - go get github.com/mitchellh/gox
   - make install-linters
   - make dep
-  - make -C ./vendor/github.com/fibercrypto/fibercryptowallet/ install-deps-no-envs
   - make install-deps
 script:
   - make build
