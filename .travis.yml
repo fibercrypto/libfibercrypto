@@ -9,6 +9,7 @@ matrix:
     - os: osx
 before_install:
   - ./ci-scripts/install-travis-gcc.sh
+  - go get -u github.com/golang/dep/cmd/dep
 env:
   global:
     - BUILD_DIR: build
