@@ -168,6 +168,7 @@ issues:
   # excluded by default patterns execute `golangci-lint run --help`
   exclude:
     - "SA4000"
+    - "U1000"
 
   # Independently from option `exclude` we use default exclude patterns,
   # it can be disabled by this option. To list all

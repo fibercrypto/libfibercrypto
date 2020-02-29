@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+
 	err "github.com/fibercrypto/fibercryptowallet/src/errors"
 )
 
