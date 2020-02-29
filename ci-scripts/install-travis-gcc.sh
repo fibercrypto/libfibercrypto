@@ -2,9 +2,9 @@
 # Install gcc6 (6.4.0-2 on Mac OS) for Travis builds
 
 if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-  sudo apt-get install -qq gcc-6 g++-6
-  sudo apt-get -y install build-essential libglu1-mesa-dev libpulse-dev libglib2.0-dev mesa-common-dev
-  sudo apt-get --no-install-recommends install libqt*5-dev qt*5-dev qml-module-qtquick-* qt*5-doc-html
+  sudo apt-get install  gcc g++ -y
+  sudo apt-get -y install build-essential libglu1-mesa libpulse-dev libglib2.0-dev mesa-common-dev
+  sudo apt-get install libqt5opengl5-dev qtbase5-dev qml-module-qtquick qtbase5-doc-html -y
 fi
 
 if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
