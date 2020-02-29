@@ -143,9 +143,11 @@ install-linters-Darwin: ## Install linters on Mac OSX
 
 install-deps-Linux: ## Install deps on GNU/Linux
 	sudo apt-get install $(PKG_LIB_TEST)
+	make -C $(SKYSRC_REL_PATH) install-deps-Linux
 
 install-deps-Darwin: ## Install deps on Mac OSX
 	brew install $(PKG_LIB_TEST)
+	make -C $(SKYSRC_REL_PATH) install-deps-Darwin
 
 install-linters: install-linters-$(UNAME_S) ## Install linters
 	go get -u github.com/FiloSottile/vendorcheck
