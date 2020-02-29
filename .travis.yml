@@ -30,7 +30,7 @@ script:
   - make build
   - make lint
 #  - make test
-  - make lint-libc
+#  - make lint-libc
 
 before_deploy:
   - export VERSION="$(git describe --tags --exact-match HEAD 2> /dev/null)"
