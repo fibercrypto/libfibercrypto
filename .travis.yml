@@ -29,7 +29,7 @@ install:
 script:
   - make build
   - make lint
-  - make test
+#  - make test
   - make lint-libc
 
 before_deploy:

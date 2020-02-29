@@ -1,1 +1,1 @@
-typedef  GoString_ core__UID;
+typedef GoString_ core__UID;
