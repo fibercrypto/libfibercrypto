@@ -165,7 +165,7 @@ check-0.12.0/src/.libs/libcheck.so: ## Install libcheck
 install-deps-libc-Darwin: configure-build ## Install locally dependencies for testing libfibercrypto
 	brew install check
 
-install-deps: install-deps-libc ## Install deps for libc and skyapi
+install-deps: install-deps-$(UNAME_S) install-deps-libc ## Install deps for libc and skyapi
 
 format: ## Formats the code. Must have goimports installed (use make install-linters).
 	goimports -w -local github.com/fibercryto/FiberCryptoWallet ./lib

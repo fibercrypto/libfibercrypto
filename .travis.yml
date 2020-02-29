@@ -21,7 +21,7 @@ install:
   # Install gox
   - go get github.com/mitchellh/gox
   - make install-linters
-  - make install-deps-libc
+  - make install-deps
 script:
   - make build
   - make lint
