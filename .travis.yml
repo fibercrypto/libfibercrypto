@@ -27,6 +27,7 @@ install:
   - make install-linters
   - make dep
   - make install-deps
+  - make -C ./vendor/github.com/fibercrypto/fibercryptowallet/ install-deps-no-envs
 script:
   - make build
   - make lint
