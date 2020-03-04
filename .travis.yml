@@ -31,8 +31,7 @@ install:
 script:
   - make build
   - make lint
-#  - make test
-#  - make lint-libc
+  - make test
 
 before_deploy:
   - export VERSION="$(git describe --tags --exact-match HEAD 2> /dev/null)"
