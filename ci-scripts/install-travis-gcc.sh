@@ -2,8 +2,7 @@
 
 if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
   sudo apt-get update
-  sudo apt-get install  gcc g++ -y
-  sudo apt-get -y install build-essential libgl1-mesa-dev --install-suggests
+  sudo apt-get install -y  gcc g++ libqt5multimedia5 build-essential libgl1-mesa-dev --install-suggests
   go get -u -v github.com/therecipe/qt/cmd/...
   (qtsetup -test=false | true)
 fi
