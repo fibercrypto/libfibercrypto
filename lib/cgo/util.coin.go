@@ -60,8 +60,11 @@ func FC_util_GenericOutput_GetAddress(_gOut *C.GenericOutput__Handle, _arg0 *C.A
 		____error_code = FC_BAD_HANDLE
 		return
 	}
-	__arg0 := gOut.GetAddress()
-	*_arg0 = registerAddressHandle(&__arg0)
+	__arg0, ____return_err := gOut.GetAddress()
+	____error_code = libErrorCode(____return_err)
+	if ____return_err == nil {
+		*_arg0 = registerAddressHandle(&__arg0)
+	}
 	return
 }
 
