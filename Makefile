@@ -39,7 +39,7 @@ HEADER_FILES = $(shell find $(INCLUDE_DIR) -type f -name "*.h")
 CC_VERSION = $(shell $(CC) -dumpversion)
 STDC_FLAG = $(python -c "if tuple(map(int, '$(CC_VERSION)'.split('.'))) < (6,): print('-std=C99'")
 LIBC_LIBS = `pkg-config --cflags --libs check`
-LIBC_FLAGS = -I$(LIBSRC_DIR) -I$(INCLUDE_DIR) -I$(BUILD_DIR)/usr/include -L $(BUILDLIB_DIR) -L$(BUILD_DIR)/usr/lib -R $(GOPATH)/src/github.com/therecipe/env_linux_amd64_513/5.13.0/gcc_64/lib/ -I $(GOPATH)/src/github.com/therecipe/env_linux_amd64_513/5.13.0/gcc_64/include/
+LIBC_FLAGS = -I$(LIBSRC_DIR) -I$(INCLUDE_DIR) -I$(BUILD_DIR)/usr/include -L $(BUILDLIB_DIR) -L$(BUILD_DIR)/usr/lib 
 # Platform specific checks
 OSNAME  = $(TRAVIS_OS_NAME)
 UNAME_S = $(shell uname -s)
