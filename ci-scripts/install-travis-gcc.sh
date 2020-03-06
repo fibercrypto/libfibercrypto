@@ -12,7 +12,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
   brew update
   echo 'Install QT'
   brew install qt5
-  go get -u -v github.com/therecipe/qt/cmd/...
+  export GO111MODULE=off; xcode-select --install; go get -v github.com/therecipe/qt/cmd/... && $(go env GOPATH)/bin/qtsetup test && $(go env GOPATH)/bin/qtsetup -test=false
 fi
 
 cd $TRAVIS_BUILD_DIR
