@@ -10,6 +10,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-Suite *check_main(void);
+Suite *check_util_cipher(void);
 
 #endif

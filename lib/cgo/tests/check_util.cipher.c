@@ -10,21 +10,19 @@
 #include "fctest.h"
 #include "libfibercrypto.h"
 
-START_TEST(TestRegisterSkycoinPlugin)
-{
-  printf("Load TestRegisterSkycoinPlugin \n");
+START_TEST(TestNewGenericAddress) {
+  printf("Load TestNewGenericAddress \n");
 
-  ck_assert_int_eq(0, 0);
+  ck_assert_int_eq(0, FC_OK);
 }
 END_TEST
 
-Suite *check_main(void)
-{
-  Suite *s = suite_create("Load check_main");
+Suite *check_util_cipher(void) {
+  Suite *s = suite_create("Load check_util_cipher");
   TCase *tc;
-  tc = tcase_create("check_main");
+  tc = tcase_create("check_util_cipher");
   tcase_add_checked_fixture(tc, setup, teardown);
-  tcase_add_test(tc, TestRegisterSkycoinPlugin);
+  tcase_add_test(tc, TestNewGenericAddress);
   suite_add_tcase(s, tc);
   return s;
 }
