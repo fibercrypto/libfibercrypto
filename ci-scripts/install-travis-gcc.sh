@@ -2,7 +2,7 @@
 
 if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
   sudo apt-get update
-  sudo apt-get install -y  gcc g++ build-essential libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediaquick-p5 libqt5multimediawidgets5
+  sudo apt-get install -y libgl1-mesa-dev gcc g++ build-essential libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediaquick-p5 libqt5multimediawidgets5
   go get -u -v github.com/therecipe/qt/cmd/...
   (qtsetup -test=false | true)
 fi
