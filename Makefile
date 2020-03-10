@@ -39,7 +39,7 @@ HEADER_FILES = $(shell find $(INCLUDE_DIR) -type f -name "*.h")
 CC_VERSION = $(shell $(CC) -dumpversion)
 STDC_FLAG = $(python -c "if tuple(map(int, '$(CC_VERSION)'.split('.'))) < (6,): print('-std=C99'")
 LIBC_LIBS = `pkg-config --cflags --libs check`
-LIBC_FLAGS = -I$(LIBSRC_DIR) -I$(INCLUDE_DIR) -I$(BUILD_DIR)/usr/include -L $(BUILDLIB_DIR) -L$(BUILD_DIR)/usr/lib -Wl,--rpath -Wl,$(QT_DIR)/$(QT_VERSION)/gcc_64/include
+LIBC_FLAGS = -I$(LIBSRC_DIR) -I$(INCLUDE_DIR) -I$(BUILD_DIR)/usr/include -L $(BUILDLIB_DIR) -L$(BUILD_DIR)/usr/lib
 # Platform specific checks
 OSNAME  = $(TRAVIS_OS_NAME)
 UNAME_S = $(shell uname -s)
@@ -48,7 +48,8 @@ CGO_ENABLED=1
 PKG_CLANG_FORMAT = clang-format
 PKG_CLANG_LINTER = clang-tidy
 PKG_LIB_TEST = check
-
+QT_DIR = $(GOPATH)/src/github.com/therecipe/env_linux_amd64_513
+QT_VERSION = 5.13.0
 ifeq ($(UNAME_S),Linux)
   LDLIBS=$(LIBC_LIBS) -lpthread
   LDPATH=$(shell printenv LD_LIBRARY_PATH)
@@ -104,9 +105,9 @@ build-libc-dbg: configure-build build-libc-static build-libc-shared
 test-libc: build-libc ## Run tests for libfibercrypto C client library
 	echo "Compiling with $(CC) $(CC_VERSION) $(STDC_FLAG)"
 	$(eval TESTS_SRC := $(shell ls $(LIB_DIR)/cgo/tests/*.c))
-	$(CC) -Wall -o $(BIN_DIR)/test_libfibercrypto_shared $(TESTS_SRC) $(LIB_DIR)/cgo/tests/testutils/*.c -lfibercrypto                    $(LDLIBS) $(LDFLAGS)
+	$(CC) -Wall -o $(BIN_DIR)/test_libfibercrypto_shared $(TESTS_SRC) $(LIB_DIR)/cgo/tests/testutils/*.c -lfibercrypto                    $(LDLIBS) $(LDFLAGS) -I$(QT_DIR)/$(QT_VERSION)/gcc_64/lib
 	# $(CC) -o $(BIN_DIR)/test_libfibercrypto_static $(TESTS_SRC) $(LIB_DIR)/cgo/tests/testutils/*.c $(BUILDLIB_DIR)/libfibercrypto.a $(LDLIBS) $(LDFLAGS)
-	$(LDPATHVAR)="$(LDPATH):$(BUILD_DIR)/usr/lib:$(BUILDLIB_DIR)":$(QT_DIR)/$(QT_VERSION)/gcc_64/lib $(BIN_DIR)/test_libfibercrypto_shared -lfibercrypto
+	$(LDPATHVAR)="$(LDPATH):$(BUILD_DIR)/usr/lib:$(BUILDLIB_DIR)":$(QT_DIR)/$(QT_VERSION)/gcc_64/lib $(BIN_DIR)/test_libfibercrypto_shared -lfibercrypto -I$(QT_DIR)/$(QT_VERSION)/gcc_64/lib
 	# $(LDPATHVAR)="$(LDPATH):$(BUILD_DIR)/usr/lib":$(QT_DIR)/$(QT_VERSION)/gcc_64/lib         $(BIN_DIR)/test_libfibercrypto_static
 
 
