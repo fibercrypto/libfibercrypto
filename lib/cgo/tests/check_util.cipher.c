@@ -63,11 +63,11 @@ START_TEST(TestNewGenericAddress)
     ck_assert_int_eq(err, FC_OK);
     if (strcmp(tt.name, "invalid_Addrs"))
     {
-      ck_assert_int_eq(got_null, 1);
+      ck_assert_int_eq(got_null, 0);
     }
     else
     {
-      ck_assert_int_eq(got_null, 0);
+      ck_assert_int_eq(got_null, 1);
     }
   }
 
