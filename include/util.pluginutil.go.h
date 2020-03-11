@@ -1,1 +1,5 @@
-typedef GoString_ core__UID;
+typedef struct
+{
+    const char *p;
+    GoInt_ n;
+} core__UID;
