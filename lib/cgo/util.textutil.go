@@ -29,7 +29,7 @@ func FC_util_EmptyPassword(_arg2 *C.GoString_) (____error_code uint32) {
 func FC_util_ConstantPassword(_pwdText string, _arg1 *C.PasswordReader) (____error_code uint32) {
 	pwdText := _pwdText
 	__arg1 := util.ConstantPassword(pwdText)
-	*_arg1 = *(*C.core__PasswordReader)(unsafe.Pointer(&__arg1))
+	*_arg1 = *(*C.PasswordReader)(unsafe.Pointer(&__arg1))
 	return
 }
 
