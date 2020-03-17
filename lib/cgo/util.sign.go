@@ -109,6 +109,7 @@ func FC_util_SignTransaction(_signerID *C.core__UID, _txn *C.Transaction__Handle
 		return
 	}
 	txn := *__txn
+	// type PasswordReader func(string, KeyValueStore) (string, error)
 	pwd := func(pString string, pKVS core.KeyValueStore) (string, error) {
 		var pStringOut C.GoString_
 		var pStringIn C.GoString_
@@ -122,6 +123,7 @@ func FC_util_SignTransaction(_signerID *C.core__UID, _txn *C.Transaction__Handle
 		}
 		return "", errors.New("Error in PasswdReader")
 	}
+
 	indices := *(*[]string)(unsafe.Pointer(&_indices))
 	__arg4, ____return_err := util.SignTransaction(signerID, txn, pwd, indices)
 	____error_code = libErrorCode(____return_err)
@@ -182,6 +184,7 @@ func FC_util_GenericMultiWalletSign(_txn *C.Transaction__Handle, _signSpec *C.In
 		}
 		return "", errors.New("Error in PasswdReader")
 	}
+
 	__arg3, ____return_err := util.GenericMultiWalletSign(txn, signSpec, pwd)
 	____error_code = libErrorCode(____return_err)
 	if ____return_err == nil {
