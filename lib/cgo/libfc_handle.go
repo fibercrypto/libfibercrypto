@@ -222,3 +222,16 @@ func lookupSimpleWalletAddressHandle(handle C.SimpleWalletAddress__Handle) (*uti
 func registerSimpleWalletAddressHandle(obj *util.SimpleWalletAddress) C.SimpleWalletAddress__Handle {
 	return (C.SimpleWalletAddress__Handle)(registerHandle(obj))
 }
+
+func lookupBalanceSnapshotHandle(handle C.BalanceSnapshot__Handle) (*util.BalanceSnapshot, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*util.BalanceSnapshot); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerBalanceSnapshotHandle(obj *util.BalanceSnapshot) C.BalanceSnapshot__Handle {
+	return (C.BalanceSnapshot__Handle)(registerHandle(obj))
+}

@@ -212,6 +212,11 @@ typedef Handle TransactionOutput__Handle;
  */
 typedef Handle SimpleWalletAddress__Handle;
 
+/**
+ * BalanceSnapshot__Handle Handle, struct util.BalanceSnapshot
+ */
+typedef Handle BalanceSnapshot__Handle;
+
 // Callbacks
 
 /**
