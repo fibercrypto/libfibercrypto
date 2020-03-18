@@ -217,6 +217,21 @@ typedef Handle SimpleWalletAddress__Handle;
  */
 typedef Handle BalanceSnapshot__Handle;
 
+/**
+ * AddressBook__Handle Handle, interface core.AddressBook
+ */
+typedef Handle AddressBook__Handle;
+
+/**
+ * Contact__Handle Handle, interface core.Contact
+ */
+typedef Handle Contact__Handle;
+
+/**
+ * Storage__Handle Handle, interface core.C.Storage
+ */
+typedef Handle Storage__Handle;
+
 // Callbacks
 
 /**
