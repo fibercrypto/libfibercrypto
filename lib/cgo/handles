@@ -24,3 +24,6 @@ CGOGEN HANDLES util__SimpleWalletOutput|SimpleWalletOutput
 CGOGEN HANDLES core__TransactionOutput|TransactionOutput
 CGOGEN HANDLES util__SimpleWalletAddress|SimpleWalletAddress
 CGOGEN HANDLES util__BalanceSnapshot|BalanceSnapshot
+CGOGEN HANDLES mocks__CryptoAccount|CryptoAccountMocks
+CGOGEN HANDLES core__TransactionIterator|TransactionIterator
+CGOGEN HANDLES core__TransactionOutputIterator|TransactionOutputIterator

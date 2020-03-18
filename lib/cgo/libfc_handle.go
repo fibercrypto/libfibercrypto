@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/fibercrypto/fibercryptowallet/src/coin/mocks"
 	"github.com/fibercrypto/fibercryptowallet/src/core"
 	"github.com/fibercrypto/fibercryptowallet/src/util"
 )
@@ -234,4 +235,43 @@ func lookupBalanceSnapshotHandle(handle C.BalanceSnapshot__Handle) (*util.Balanc
 }
 func registerBalanceSnapshotHandle(obj *util.BalanceSnapshot) C.BalanceSnapshot__Handle {
 	return (C.BalanceSnapshot__Handle)(registerHandle(obj))
+}
+
+func lookupCryptoAccountMocksHandle(handle C.CryptoAccountMocks__Handle) (*mocks.CryptoAccount, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.CryptoAccount); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerCryptoAccountMocksHandle(obj *mocks.CryptoAccount) C.CryptoAccountMocks__Handle {
+	return (C.CryptoAccountMocks__Handle)(registerHandle(obj))
+}
+
+func lookupTransactionIteratorHandle(handle C.TransactionIterator__Handle) (*core.TransactionIterator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.TransactionIterator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerTransactionIteratorHandle(obj *core.TransactionIterator) C.TransactionIterator__Handle {
+	return (C.TransactionIterator__Handle)(registerHandle(obj))
+}
+
+func lookupTransactionOutputIteratorHandle(handle C.TransactionOutputIterator__Handle) (*core.TransactionOutputIterator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.TransactionOutputIterator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerTransactionOutputIteratorHandle(obj *core.TransactionOutputIterator) C.TransactionOutputIterator__Handle {
+	return (C.TransactionOutputIterator__Handle)(registerHandle(obj))
 }
