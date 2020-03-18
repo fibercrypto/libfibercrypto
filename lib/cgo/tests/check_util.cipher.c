@@ -10,15 +10,13 @@
 #include "fctest.h"
 #include "libfibercrypto.h"
 
-typedef struct
-{
+typedef struct {
   unsigned char *name;
   GoString args;
   util__GenericAddress want;
 } test_case;
 
-START_TEST(TestNewGenericAddress)
-{
+START_TEST(TestNewGenericAddress) {
   printf("Load TestNewGenericAddress \n");
 
   test_case tests[3];
@@ -29,14 +27,14 @@ START_TEST(TestNewGenericAddress)
   tests[0].want.Address.p = "2kvLEyXwAYvHfJuFCkjnYNRTUfHPyWgVwKt";
   tests[0].want.Address.n = 35;
 
-  for (int i = 0; i < 1; i++)
-  {
+  for (int i = 0; i < 1; i++) {
     printf("Load %d\n", i);
     test_case tt = tests[i];
     util__GenericAddress got;
     GoUint32_ err = FC_util_NewGenericAddress(tt.args, &got);
     ck_assert_int_eq(err, FC_OK);
-    ck_assert_msg(isutil__GenericAddress_Eq(got, tt.want), "Fail isutil__GenericAddress_Eq");
+    ck_assert_msg(isutil__GenericAddress_Eq(got, tt.want),
+                  "Fail isutil__GenericAddress_Eq");
 
     GoUint8 buffer_got_slice[1024];
     GoSlice_ got_slice = {buffer_got_slice, 0, 1024};
@@ -61,12 +59,9 @@ START_TEST(TestNewGenericAddress)
     GoUint8 got_null;
     err = FC_util_GenericAddress_Null(&got, &got_null);
     ck_assert_int_eq(err, FC_OK);
-    if (strcmp(tt.name, "invalid_Addrs"))
-    {
+    if (strcmp(tt.name, "invalid_Addrs")) {
       ck_assert_int_eq(got_null, 0);
-    }
-    else
-    {
+    } else {
       ck_assert_int_eq(got_null, 1);
     }
   }
@@ -75,8 +70,7 @@ START_TEST(TestNewGenericAddress)
 }
 END_TEST
 
-Suite *check_util_cipher(void)
-{
+Suite *check_util_cipher(void) {
   Suite *s = suite_create("Load check_util_cipher");
   TCase *tc;
   tc = tcase_create("check_util_cipher");
