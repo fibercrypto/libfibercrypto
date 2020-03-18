@@ -288,3 +288,55 @@ func lookupAddressMocksHandle(handle C.AddressMocks__Handle) (*mocks.Address, bo
 func registerAddressMocksHandle(obj *mocks.Address) C.AddressMocks__Handle {
 	return (C.AddressMocks__Handle)(registerHandle(obj))
 }
+
+func lookupAddressBookMocksHandle(handle C.AddressBookMocks__Handle) (*mocks.AddressBook, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.AddressBook); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerAddressBookMocksHandle(obj *mocks.AddressBook) C.AddressBookMocks__Handle {
+	return (C.AddressBookMocks__Handle)(registerHandle(obj))
+}
+
+func lookupContactHandle(handle C.Contact__Handle) (*core.Contact, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.Contact); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerContactHandle(obj *core.Contact) C.Contact__Handle {
+	return (C.Contact__Handle)(registerHandle(obj))
+}
+
+func lookupStorageHandle(handle C.Storage__Handle) (*core.Storage, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.Storage); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerStorageHandle(obj *core.Storage) C.Storage__Handle {
+	return (C.Storage__Handle)(registerHandle(obj))
+}
+
+func lookupPubKeyHandle(handle C.PubKey__Handle) (*core.PubKey, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.PubKey); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerPubKeyHandle(obj *core.PubKey) C.PubKey__Handle {
+	return (C.PubKey__Handle)(registerHandle(obj))
+}

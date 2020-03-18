@@ -252,6 +252,21 @@ typedef Handle TransactionIterator__Handle;
  */
 typedef Handle TransactionOutputIterator__Handle;
 
+/**
+ * AddressMocks__Handle Handle, interface mocks.Address
+ */
+typedef Handle AddressMocks__Handle;
+
+/**
+ * AddressBookMocks__Handle Handle, interface mocks.AddressBook
+ */
+typedef Handle AddressBookMocks__Handle;
+
+/**
+ * PubKey__Handle Handle, interface core.PubKey
+ */
+typedef Handle PubKey__Handle;
+
 // Callbacks
 
 /**
