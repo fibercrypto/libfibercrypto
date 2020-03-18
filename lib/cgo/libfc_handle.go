@@ -275,3 +275,16 @@ func lookupTransactionOutputIteratorHandle(handle C.TransactionOutputIterator__H
 func registerTransactionOutputIteratorHandle(obj *core.TransactionOutputIterator) C.TransactionOutputIterator__Handle {
 	return (C.TransactionOutputIterator__Handle)(registerHandle(obj))
 }
+
+func lookupAddressMocksHandle(handle C.AddressMocks__Handle) (*mocks.Address, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.Address); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerAddressMocksHandle(obj *mocks.Address) C.AddressMocks__Handle {
+	return (C.AddressMocks__Handle)(registerHandle(obj))
+}
