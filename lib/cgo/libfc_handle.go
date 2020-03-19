@@ -340,3 +340,16 @@ func lookupPubKeyHandle(handle C.PubKey__Handle) (*core.PubKey, bool) {
 func registerPubKeyHandle(obj *core.PubKey) C.PubKey__Handle {
 	return (C.PubKey__Handle)(registerHandle(obj))
 }
+
+func lookupAddressIteratorMocksHandle(handle C.AddressIteratorMocks__Handle) (*mocks.AddressIterator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.AddressIterator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerAddressIteratorMocksHandle(obj *mocks.AddressIterator) C.AddressIteratorMocks__Handle {
+	return (C.AddressIteratorMocks__Handle)(registerHandle(obj))
+}
