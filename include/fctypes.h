@@ -267,6 +267,10 @@ typedef Handle AddressBookMocks__Handle;
  */
 typedef Handle PubKey__Handle;
 
+/**
+ * AddressIteratorMocks__Handle Handle, interface mocks.AddressIterator
+ */
+typedef Handle AddressIteratorMocks__Handle;
 // Callbacks
 
 /**
