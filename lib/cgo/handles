@@ -29,3 +29,4 @@ CGOGEN HANDLES core__TransactionIterator|TransactionIterator
 CGOGEN HANDLES core__TransactionOutputIterator|TransactionOutputIterator
 CGOGEN HANDLES mocks__AddressBook|AddressBookMocks
 CGOGEN HANDLES mocks__AddressIterator|AddressIteratorMocks
+CGOGEN HANDLES mocks__AltcoinManager|AltcoinManagerMocks

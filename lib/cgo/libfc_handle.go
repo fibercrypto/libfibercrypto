@@ -353,3 +353,16 @@ func lookupAddressIteratorMocksHandle(handle C.AddressIteratorMocks__Handle) (*m
 func registerAddressIteratorMocksHandle(obj *mocks.AddressIterator) C.AddressIteratorMocks__Handle {
 	return (C.AddressIteratorMocks__Handle)(registerHandle(obj))
 }
+
+func lookupAltcoinManagerMocksHandle(handle C.AltcoinManagerMocks__Handle) (*mocks.AltcoinManager, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.AltcoinManager); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerAltcoinManagerMocksHandle(obj *mocks.AltcoinManager) C.AltcoinManagerMocks__Handle {
+	return (C.AddressIteratorMocks__Handle)(registerHandle(obj))
+}

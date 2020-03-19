@@ -271,6 +271,12 @@ typedef Handle PubKey__Handle;
  * AddressIteratorMocks__Handle Handle, interface mocks.AddressIterator
  */
 typedef Handle AddressIteratorMocks__Handle;
+
+/**
+ * AltcoinManagerMocks__Handle Handle, interface mocks.AltcoinManager
+ */
+typedef Handle AltcoinManagerMocks__Handle;
+
 // Callbacks
 
 /**
