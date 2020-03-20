@@ -312,6 +312,11 @@ typedef Handle PEX__Handle;
  */
 typedef Handle BlockMocks__Handle;
 
+/**
+ * BlockchainSignServiceMocks__Handle Handle, struct mocks.BlockchainSignServiceMocks
+ */
+typedef Handle BlockchainSignServiceMocks__Handle;
+
 // Callbacks
 
 /**

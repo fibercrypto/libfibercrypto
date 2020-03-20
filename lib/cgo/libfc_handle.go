@@ -454,3 +454,15 @@ func lookupBlockMocksHandle(handle C.BlockMocks__Handle) (*mocks.Block, bool) {
 func registerBlockMocksHandle(obj *mocks.Block) C.BlockMocks__Handle {
 	return (C.BlockMocks__Handle)(registerHandle(obj))
 }
+func lookupBlockchainSignServiceMocksHandle(handle C.BlockchainSignServiceMocks__Handle) (*mocks.BlockchainSignService, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.BlockchainSignService); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerBlockchainSignServiceMocksHandle(obj *mocks.BlockchainSignService) C.BlockchainSignServiceMocks__Handle {
+	return (C.BlockchainSignServiceMocks__Handle)(registerHandle(obj))
+}
