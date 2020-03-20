@@ -37,3 +37,5 @@ CGOGEN HANDLES core__BlockchainTransactionAPI|BlockchainTransactionAPI
 CGOGEN HANDLES core__PEX|PEX
 CGOGEN HANDLES mocks__Block|BlockMocks
 CGOGEN HANDLES mocks__BlockchainSignService|BlockchainSignServiceMocks
+CGOGEN HANDLES mocks__BlockchainStatus|BlockchainStatusMocks
+CGOGEN HANDLES core__Block|Block
