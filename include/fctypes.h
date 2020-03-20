@@ -277,6 +277,36 @@ typedef Handle AddressIteratorMocks__Handle;
  */
 typedef Handle AltcoinManagerMocks__Handle;
 
+/**
+ * AltcoinPluginMocks__Handle Handle, interface mocks.AltcoinPlugin
+ */
+typedef Handle AltcoinPluginMocks__Handle;
+
+/**
+ * SecKey__Handle Handle, interface core.SecKey
+ */
+typedef Handle SecKey__Handle;
+
+/**
+ * AltcoinManager__Handle Handle, interface core.AltcoinManager
+ */
+typedef Handle AltcoinManager__Handle;
+
+/**
+ * BlockchainSignService__Handle Handle, interface core.BlockchainSignService
+ */
+typedef Handle BlockchainSignService__Handle;
+
+/**
+ * BlockchainTransactionAPI__Handle Handle, interface core.BlockchainTransactionAPI
+ */
+typedef Handle BlockchainTransactionAPI__Handle;
+
+/**
+ * PEX__Handle Handle, interface core.PEX
+ */
+typedef Handle PEX__Handle;
+
 // Callbacks
 
 /**

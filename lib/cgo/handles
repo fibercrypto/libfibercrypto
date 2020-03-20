@@ -30,3 +30,8 @@ CGOGEN HANDLES core__TransactionOutputIterator|TransactionOutputIterator
 CGOGEN HANDLES mocks__AddressBook|AddressBookMocks
 CGOGEN HANDLES mocks__AddressIterator|AddressIteratorMocks
 CGOGEN HANDLES mocks__AltcoinManager|AltcoinManagerMocks
+CGOGEN HANDLES mocks__AltcoinPlugin|AltcoinPluginMocks
+CGOGEN HANDLES core__AltcoinManager|AltcoinManager
+CGOGEN HANDLES core__BlockchainSignService|BlockchainSignService
+CGOGEN HANDLES core__BlockchainTransactionAPI|BlockchainTransactionAPI
+CGOGEN HANDLES core__PEX|PEX

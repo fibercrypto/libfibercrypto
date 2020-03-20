@@ -366,3 +366,79 @@ func lookupAltcoinManagerMocksHandle(handle C.AltcoinManagerMocks__Handle) (*moc
 func registerAltcoinManagerMocksHandle(obj *mocks.AltcoinManager) C.AltcoinManagerMocks__Handle {
 	return (C.AddressIteratorMocks__Handle)(registerHandle(obj))
 }
+
+func lookupAltcoinPluginMocksHandle(handle C.AltcoinPluginMocks__Handle) (*mocks.AltcoinPlugin, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.AltcoinPlugin); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerAltcoinPluginMocksHandle(obj *mocks.AltcoinPlugin) C.AltcoinPluginMocks__Handle {
+	return (C.AltcoinPluginMocks__Handle)(registerHandle(obj))
+}
+
+func lookupSecKeyHandle(handle C.SecKey__Handle) (*core.SecKey, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.SecKey); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerSecKeyHandle(obj *core.SecKey) C.SecKey__Handle {
+	return (C.SecKey__Handle)(registerHandle(obj))
+}
+
+func lookupAltcoinManagerHandle(handle C.AltcoinManager__Handle) (*core.AltcoinManager, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.AltcoinManager); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerAltcoinManagerHandle(obj *core.AltcoinManager) C.AltcoinManager__Handle {
+	return (C.AltcoinManager__Handle)(registerHandle(obj))
+}
+func lookupBlockchainSignServiceHandle(handle C.BlockchainSignService__Handle) (*core.BlockchainSignService, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.BlockchainSignService); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerBlockchainSignServiceHandle(obj *core.BlockchainSignService) C.BlockchainSignService__Handle {
+	return (C.BlockchainSignService__Handle)(registerHandle(obj))
+}
+
+func lookupBlockchainTransactionAPIHandle(handle C.BlockchainTransactionAPI__Handle) (*core.BlockchainTransactionAPI, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.BlockchainTransactionAPI); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerBlockchainTransactionAPIHandle(obj *core.BlockchainTransactionAPI) C.BlockchainTransactionAPI__Handle {
+	return (C.BlockchainTransactionAPI__Handle)(registerHandle(obj))
+}
+func lookupPEXHandle(handle C.PEX__Handle) (*core.PEX, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.PEX); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerPEXHandle(obj *core.PEX) C.PEX__Handle {
+	return (C.PEX__Handle)(registerHandle(obj))
+}
