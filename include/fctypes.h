@@ -307,6 +307,11 @@ typedef Handle BlockchainTransactionAPI__Handle;
  */
 typedef Handle PEX__Handle;
 
+/**
+ * BlockMocks__Handle Handle, interface mocks.Block
+ */
+typedef Handle BlockMocks__Handle;
+
 // Callbacks
 
 /**

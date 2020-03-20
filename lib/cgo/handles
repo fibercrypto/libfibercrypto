@@ -35,3 +35,4 @@ CGOGEN HANDLES core__AltcoinManager|AltcoinManager
 CGOGEN HANDLES core__BlockchainSignService|BlockchainSignService
 CGOGEN HANDLES core__BlockchainTransactionAPI|BlockchainTransactionAPI
 CGOGEN HANDLES core__PEX|PEX
+CGOGEN HANDLES mocks__Block|BlockMocks

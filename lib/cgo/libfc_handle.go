@@ -442,3 +442,15 @@ func lookupPEXHandle(handle C.PEX__Handle) (*core.PEX, bool) {
 func registerPEXHandle(obj *core.PEX) C.PEX__Handle {
 	return (C.PEX__Handle)(registerHandle(obj))
 }
+func lookupBlockMocksHandle(handle C.BlockMocks__Handle) (*mocks.Block, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.Block); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerBlockMocksHandle(obj *mocks.Block) C.BlockMocks__Handle {
+	return (C.BlockMocks__Handle)(registerHandle(obj))
+}

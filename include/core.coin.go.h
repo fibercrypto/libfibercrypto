@@ -1,0 +1,1 @@
+typedef GoUint64_ core__Timestamp;
