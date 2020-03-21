@@ -529,3 +529,16 @@ func lookupWalletOutputHandle(handle C.WalletOutput__Handle) (*core.WalletOutput
 func registerWalletOutputHandle(obj *core.WalletOutput) C.WalletOutput__Handle {
 	return (C.WalletOutput__Handle)(registerHandle(obj))
 }
+
+func lookupContactMocksHandle(handle C.ContactMocks__Handle) (*mocks.Contact, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.Contact); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerContactMocksHandle(obj *mocks.Contact) C.ContactMocks__Handle {
+	return (C.ContactMocks__Handle)(registerHandle(obj))
+}

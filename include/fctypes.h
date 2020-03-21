@@ -72,14 +72,16 @@ typedef double GoFloat64_;
 /**
  * Instances of Go `complex` type.
  */
-typedef struct {
+typedef struct
+{
   float real;
   float imaginary;
 } GoComplex64_;
 /**
  * Instances of Go `complex` type.
  */
-typedef struct {
+typedef struct
+{
   double real;
   double imaginary;
 } GoComplex128_;
@@ -98,7 +100,8 @@ typedef char
 /**
  * Instances of Go `string` type.
  */
-typedef struct {
+typedef struct
+{
   const char *p; ///< Pointer to string characters buffer.
   GoInt_ n;      ///< String size not counting trailing `\0` char
                  ///< if at all included.
@@ -116,7 +119,8 @@ typedef void *GoChan_;
 /**
  * Instances of Go interface types.
  */
-typedef struct {
+typedef struct
+{
   void *t; ///< Pointer to the information of the concrete Go type
            ///< bound to this interface reference.
   void *v; ///< Pointer to the data corresponding to the value
@@ -125,7 +129,8 @@ typedef struct {
 /**
  * Instances of Go slices
  */
-typedef struct {
+typedef struct
+{
   void *data; ///< Pointer to buffer containing slice data.
   GoInt_ len; ///< Number of items stored in slice buffer
   GoInt_ cap; ///< Maximum number of items that fits in this slice
@@ -338,6 +343,17 @@ typedef Handle WalletAddress__Handle;
  * WalletOutput__Handle Handle, interface core.WalletOutput
  */
 typedef Handle WalletOutput__Handle;
+
+/**
+ * ContactMocks__Handle Handle, struct mocks.Contact
+ */
+typedef Handle ContactMocks__Handle;
+
+/**
+ * StringAddress__Handle Handle, interface core.StringAddress
+ */
+typedef Handle StringAddress__Handle;
+
 // Callbacks
 
 /**
@@ -348,7 +364,8 @@ typedef GoUint32_ (*PasswordReaderFunc)(GoString_ pString,
                                         KeyValueStore__Handle pKeyValue,
                                         GoString_ *pStringOut, void *context);
 
-typedef struct {
+typedef struct
+{
   PasswordReaderFunc callback;
   void *context;
 } PasswordReader;
