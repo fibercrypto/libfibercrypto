@@ -39,3 +39,6 @@ CGOGEN HANDLES mocks__Block|BlockMocks
 CGOGEN HANDLES mocks__BlockchainSignService|BlockchainSignServiceMocks
 CGOGEN HANDLES mocks__BlockchainStatus|BlockchainStatusMocks
 CGOGEN HANDLES core__Block|Block
+CGOGEN HANDLES mocks__BlockchainTransactionAPI|BlockchainTransactionAPIMocks
+CGOGEN HANDLES core__WalletAddress|WalletAddress
+CGOGEN HANDLES core__WalletOutput|WalletOutput

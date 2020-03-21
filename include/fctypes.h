@@ -323,6 +323,21 @@ typedef Handle BlockchainStatusMocks__Handle;
  * Block__Handle Handle, interface core.Block
  */
 typedef Handle Block__Handle;
+
+/**
+ * BlockchainTransactionAPIMocks__Handle Handle, struct mocks.BlockchainTransactionAPI
+ */
+typedef Handle BlockchainTransactionAPIMocks__Handle;
+
+/**
+ * WalletAddress__Handle Handle, interface core.WalletAddress
+ */
+typedef Handle WalletAddress__Handle;
+
+/**
+ * WalletOutput__Handle Handle, interface core.WalletOutput
+ */
+typedef Handle WalletOutput__Handle;
 // Callbacks
 
 /**

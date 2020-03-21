@@ -490,3 +490,42 @@ func lookupBlockHandle(handle C.Block__Handle) (*core.Block, bool) {
 func registerBlockHandle(obj *core.Block) C.Block__Handle {
 	return (C.Block__Handle)(registerHandle(obj))
 }
+
+func lookupBlockchainTransactionAPIMocksHandle(handle C.BlockchainTransactionAPIMocks__Handle) (*mocks.BlockchainTransactionAPI, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.BlockchainTransactionAPI); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerBlockchainTransactionAPIMocksHandle(obj *mocks.BlockchainTransactionAPI) C.BlockchainTransactionAPIMocks__Handle {
+	return (C.BlockchainTransactionAPIMocks__Handle)(registerHandle(obj))
+}
+
+func lookupWalletAddressHandle(handle C.WalletAddress__Handle) (*core.WalletAddress, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.WalletAddress); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerWalletAddressHandle(obj *core.WalletAddress) C.WalletAddress__Handle {
+	return (C.WalletAddress__Handle)(registerHandle(obj))
+}
+
+func lookupWalletOutputHandle(handle C.WalletOutput__Handle) (*core.WalletOutput, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.WalletOutput); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+func registerWalletOutputHandle(obj *core.WalletOutput) C.WalletOutput__Handle {
+	return (C.WalletOutput__Handle)(registerHandle(obj))
+}
