@@ -542,3 +542,115 @@ func lookupContactMocksHandle(handle C.ContactMocks__Handle) (*mocks.Contact, bo
 func registerContactMocksHandle(obj *mocks.Contact) C.ContactMocks__Handle {
 	return (C.ContactMocks__Handle)(registerHandle(obj))
 }
+
+func lookupPexNodeIteratorHandle(handle C.PexNodeIterator__Handle) (*core.PexNodeIterator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.PexNodeIterator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerPexNodeIteratorHandle(obj *core.PexNodeIterator) C.PexNodeIterator__Handle {
+	return (C.PexNodeIterator__Handle)(registerHandle(obj))
+}
+
+func lookupPexNodeSetHandle(handle C.PexNodeSet__Handle) (*core.PexNodeSet, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.PexNodeSet); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerPexNodeSetHandle(obj *core.PexNodeSet) C.PexNodeSet__Handle {
+	return (C.PexNodeSet__Handle)(registerHandle(obj))
+}
+
+func lookupPexNodeHandle(handle C.PexNode__Handle) (*core.PexNode, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.PexNode); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerPexNodeHandle(obj *core.PexNode) C.PexNode__Handle {
+	return (C.PexNode__Handle)(registerHandle(obj))
+}
+
+func lookupPooledObjectFactoryHandle(handle C.PooledObjectFactory__Handle) (*core.PooledObjectFactory, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.PooledObjectFactory); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerPooledObjectFactoryHandle(obj *core.PooledObjectFactory) C.PooledObjectFactory__Handle {
+	return (C.PooledObjectFactory__Handle)(registerHandle(obj))
+}
+
+func lookupMultiPoolHandle(handle C.MultiPool__Handle) (*core.MultiPool, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.MultiPool); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerMultiPoolHandle(obj *core.MultiPool) C.MultiPool__Handle {
+	return (C.MultiPool__Handle)(registerHandle(obj))
+}
+
+func lookupMultiPoolSectionHandle(handle C.MultiPoolSection__Handle) (*core.MultiPoolSection, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.MultiPoolSection); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerMultiPoolSectionHandle(obj *core.MultiPoolSection) C.MultiPoolSection__Handle {
+	return (C.MultiPoolSection__Handle)(registerHandle(obj))
+}
+
+func lookupMultiConnectionsPoolHandle(handle C.MultiConnectionsPool__Handle) (*core.MultiConnectionsPool, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.MultiConnectionsPool); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerMultiConnectionsPoolHandle(obj *core.MultiConnectionsPool) C.MultiConnectionsPool__Handle {
+	return (C.MultiConnectionsPool__Handle)(registerHandle(obj))
+}
+
+func lookupPoolSectionHandle(handle C.PoolSection__Handle) (*core.PoolSection, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.PoolSection); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerPoolSectionHandle(obj *core.PoolSection) C.PoolSection__Handle {
+	return (C.PoolSection__Handle)(registerHandle(obj))
+}

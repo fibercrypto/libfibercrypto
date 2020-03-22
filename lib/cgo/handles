@@ -43,3 +43,11 @@ CGOGEN HANDLES mocks__BlockchainTransactionAPI|BlockchainTransactionAPIMocks
 CGOGEN HANDLES core__WalletAddress|WalletAddress
 CGOGEN HANDLES core__WalletOutput|WalletOutput
 CGOGEN HANDLES mocks__Contact|ContactMocks
+CGOGEN HANDLES core__PexNodeIterator|PexNodeIterator
+CGOGEN HANDLES core__PexNodeSet|PexNodeSet
+CGOGEN HANDLES core__PexNode|PexNode
+CGOGEN HANDLES core__PooledObjectFactory|PooledObjectFactory
+CGOGEN HANDLES core__MultiPool|MultiPool
+CGOGEN HANDLES core__MultiPoolSection|MultiPoolSection
+CGOGEN HANDLES core__MultiConnectionsPool|MultiConnectionsPool
+CGOGEN HANDLES core__PoolSection|PoolSection
