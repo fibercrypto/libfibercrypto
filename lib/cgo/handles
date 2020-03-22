@@ -57,3 +57,4 @@ CGOGEN HANDLES core__WalletStorage|WalletStorage
 CGOGEN HANDLES core__SeedGenerator|SeedGenerator
 CGOGEN HANDLES core__WalletEnv|WalletEnv
 CGOGEN HANDLES mocks__MultiPool|MultiPoolMocks
+CGOGEN HANDLES mocks__PEX|PEXMocks

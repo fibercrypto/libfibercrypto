@@ -420,6 +420,11 @@ typedef Handle WalletEnv__Handle;
  */
 typedef Handle MultiPoolMocks__Handle;
 
+/**
+ * PEXMocks__Handle Handle, struct mocks.PEX
+ */
+typedef Handle PEXMocks__Handle;
+
 // Callbacks
 
 /**

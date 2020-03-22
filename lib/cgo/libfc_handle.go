@@ -738,3 +738,17 @@ func lookupMultiPoolMocksHandle(handle C.MultiPoolMocks__Handle) (*mocks.MultiPo
 func registerMultiPoolMocksHandle(obj *mocks.MultiPool) C.MultiPoolMocks__Handle {
 	return (C.MultiPoolMocks__Handle)(registerHandle(obj))
 }
+
+func lookupPEXMocksHandle(handle C.PEXMocks__Handle) (*mocks.PEX, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.PEX); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerPEXMocksHandle(obj *mocks.PEX) C.PEXMocks__Handle {
+	return (C.PEXMocks__Handle)(registerHandle(obj))
+}
