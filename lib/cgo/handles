@@ -51,3 +51,8 @@ CGOGEN HANDLES core__MultiPool|MultiPool
 CGOGEN HANDLES core__MultiPoolSection|MultiPoolSection
 CGOGEN HANDLES core__MultiConnectionsPool|MultiConnectionsPool
 CGOGEN HANDLES core__PoolSection|PoolSection
+CGOGEN HANDLES core__WalletIterator|WalletIterator
+CGOGEN HANDLES core__WalletSet|WalletSet
+CGOGEN HANDLES core__WalletStorage|WalletStorage
+CGOGEN HANDLES core__SeedGenerator|SeedGenerator
+CGOGEN HANDLES core__WalletEnv|WalletEnv

@@ -390,6 +390,31 @@ typedef Handle MultiConnectionsPool__Handle;
  */
 typedef Handle PoolSection__Handle;
 
+/**
+ * WalletIterator__Handle Handle, interface core.WalletIterator
+ */
+typedef Handle WalletIterator__Handle;
+
+/**
+ * WalletSet__Handle Handle, interface core.WalletSet
+ */
+typedef Handle WalletSet__Handle;
+
+/**
+ * WalletStorage__Handle Handle, interface core.WalletStorage
+ */
+typedef Handle WalletStorage__Handle;
+
+/**
+ * SeedGenerator__Handle Handle, interface core.SeedGenerator
+ */
+typedef Handle SeedGenerator__Handle;
+
+/**
+ * WalletEnv__Handle Handle, interface core.WalletEnv
+ */
+typedef Handle WalletEnv__Handle;
+
 // Callbacks
 
 /**

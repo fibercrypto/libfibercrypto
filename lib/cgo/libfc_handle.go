@@ -654,3 +654,73 @@ func lookupPoolSectionHandle(handle C.PoolSection__Handle) (*core.PoolSection, b
 func registerPoolSectionHandle(obj *core.PoolSection) C.PoolSection__Handle {
 	return (C.PoolSection__Handle)(registerHandle(obj))
 }
+
+func lookupWalletIteratorHandle(handle C.WalletIterator__Handle) (*core.WalletIterator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.WalletIterator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerWalletIteratorHandle(obj *core.WalletIterator) C.WalletIterator__Handle {
+	return (C.WalletIterator__Handle)(registerHandle(obj))
+}
+
+func lookupWalletSetHandle(handle C.WalletSet__Handle) (*core.WalletSet, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.WalletSet); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerWalletSetHandle(obj *core.WalletSet) C.WalletSet__Handle {
+	return (C.WalletSet__Handle)(registerHandle(obj))
+}
+
+func lookupWalletStorageHandle(handle C.WalletStorage__Handle) (*core.WalletStorage, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.WalletStorage); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerWalletStorageHandle(obj *core.WalletStorage) C.WalletStorage__Handle {
+	return (C.WalletStorage__Handle)(registerHandle(obj))
+}
+
+func lookupSeedGeneratorHandle(handle C.SeedGenerator__Handle) (*core.SeedGenerator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.SeedGenerator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerSeedGeneratorHandle(obj *core.SeedGenerator) C.SeedGenerator__Handle {
+	return (C.SeedGenerator__Handle)(registerHandle(obj))
+}
+
+func lookupWalletEnvHandle(handle C.WalletEnv__Handle) (*core.WalletEnv, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.WalletEnv); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerWalletEnvHandle(obj *core.WalletEnv) C.WalletEnv__Handle {
+	return (C.WalletEnv__Handle)(registerHandle(obj))
+}
