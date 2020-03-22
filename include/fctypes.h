@@ -415,6 +415,11 @@ typedef Handle SeedGenerator__Handle;
  */
 typedef Handle WalletEnv__Handle;
 
+/**
+ * MultiPoolMocks__Handle Handle, struct mocks.MultiPool
+ */
+typedef Handle MultiPoolMocks__Handle;
+
 // Callbacks
 
 /**

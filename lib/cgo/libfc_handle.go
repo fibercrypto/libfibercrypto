@@ -724,3 +724,17 @@ func lookupWalletEnvHandle(handle C.WalletEnv__Handle) (*core.WalletEnv, bool) {
 func registerWalletEnvHandle(obj *core.WalletEnv) C.WalletEnv__Handle {
 	return (C.WalletEnv__Handle)(registerHandle(obj))
 }
+
+func lookupMultiPoolMocksHandle(handle C.MultiPoolMocks__Handle) (*mocks.MultiPool, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.MultiPool); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerMultiPoolMocksHandle(obj *mocks.MultiPool) C.MultiPoolMocks__Handle {
+	return (C.MultiPoolMocks__Handle)(registerHandle(obj))
+}
