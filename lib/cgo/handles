@@ -59,3 +59,4 @@ CGOGEN HANDLES core__WalletEnv|WalletEnv
 CGOGEN HANDLES mocks__MultiPool|MultiPoolMocks
 CGOGEN HANDLES mocks__PEX|PEXMocks
 CGOGEN HANDLES mocks__PexNode|PexNodeMocks
+CGOGEN HANDLES mocks__PexNodeIterator|PexNodeIteratorMocks
