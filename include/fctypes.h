@@ -435,6 +435,11 @@ typedef Handle PexNodeMocks__Handle;
  */
 typedef Handle PexNodeIteratorMocks__Handle;
 
+/**
+ * PexNodeSetMocks__Handle Handle, struct mocks.PexNodeSet
+ */
+typedef Handle PexNodeSetMocks__Handle;
+
 // Callbacks
 
 /**

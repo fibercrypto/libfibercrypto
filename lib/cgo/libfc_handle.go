@@ -780,3 +780,17 @@ func lookupPexNodeIteratorMocksHandle(handle C.PexNodeIteratorMocks__Handle) (*m
 func registerPexNodeIteratorMocksHandle(obj *mocks.PexNodeIterator) C.PexNodeIteratorMocks__Handle {
 	return (C.PexNodeIteratorMocks__Handle)(registerHandle(obj))
 }
+
+func lookupPexNodeSetMocksHandle(handle C.PexNodeSetMocks__Handle) (*mocks.PexNodeSet, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.PexNodeSet); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerPexNodeSetMocksHandle(obj *mocks.PexNodeSet) C.PexNodeSetMocks__Handle {
+	return (C.PexNodeSetMocks__Handle)(registerHandle(obj))
+}
