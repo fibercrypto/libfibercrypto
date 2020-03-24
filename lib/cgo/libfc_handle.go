@@ -794,3 +794,16 @@ func lookupPexNodeSetMocksHandle(handle C.PexNodeSetMocks__Handle) (*mocks.PexNo
 func registerPexNodeSetMocksHandle(obj *mocks.PexNodeSet) C.PexNodeSetMocks__Handle {
 	return (C.PexNodeSetMocks__Handle)(registerHandle(obj))
 }
+func lookupPubKeyMocksHandle(handle C.PubKeyMocks__Handle) (*mocks.PubKey, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.PubKey); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerPubKeyMocksHandle(obj *mocks.PubKey) C.PubKeyMocks__Handle {
+	return (C.PubKeyMocks__Handle)(registerHandle(obj))
+}
