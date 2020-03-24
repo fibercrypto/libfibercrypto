@@ -807,3 +807,17 @@ func lookupPubKeyMocksHandle(handle C.PubKeyMocks__Handle) (*mocks.PubKey, bool)
 func registerPubKeyMocksHandle(obj *mocks.PubKey) C.PubKeyMocks__Handle {
 	return (C.PubKeyMocks__Handle)(registerHandle(obj))
 }
+
+func lookupSecKeyMocksHandle(handle C.SecKeyMocks__Handle) (*mocks.SecKey, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.SecKey); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerSecKeyMocksHandle(obj *mocks.SecKey) C.SecKeyMocks__Handle {
+	return (C.SecKeyMocks__Handle)(registerHandle(obj))
+}

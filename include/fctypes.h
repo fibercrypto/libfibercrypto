@@ -439,10 +439,16 @@ typedef Handle PexNodeIteratorMocks__Handle;
  * PexNodeSetMocks__Handle Handle, struct mocks.PexNodeSet
  */
 typedef Handle PexNodeSetMocks__Handle;
+
 /**
  * PubKeyMocks__Handle Handle, struct mocks.PubKey
  */
 typedef Handle PubKeyMocks__Handle;
+
+/**
+ * SecKeyMocks__Handle Handle, struct mocks.SecKey
+ */
+typedef Handle SecKeyMocks__Handle;
 
 // Callbacks
 

@@ -62,3 +62,4 @@ CGOGEN HANDLES mocks__PexNode|PexNodeMocks
 CGOGEN HANDLES mocks__PexNodeIterator|PexNodeIteratorMocks
 CGOGEN HANDLES mocks__PexNodeSet|PexNodeSetMocks
 CGOGEN HANDLES mocks__PubKey|PubKeyMocks
+CGOGEN HANDLES mocks__SecKey|SecKeyMocks
