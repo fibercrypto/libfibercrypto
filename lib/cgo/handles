@@ -75,3 +75,4 @@ CGOGEN HANDLES mocks__TransactionOutputIterator|TransactionOutputIteratorMocks
 CGOGEN HANDLES mocks__TxnSigner|TxnSignerMocks
 CGOGEN HANDLES mocks__TxnSignerIterator|TxnSignerIteratorMocks
 CGOGEN HANDLES mocks__Wallet|WalletMocks
+CGOGEN HANDLES mocks__WalletAddress|WalletAddressMocks

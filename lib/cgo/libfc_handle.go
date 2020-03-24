@@ -998,3 +998,17 @@ func lookupAddressIteratorHandle(handle C.AddressIterator__Handle) (*core.Addres
 func registerAddressIteratorHandle(obj *core.AddressIterator) C.AddressIterator__Handle {
 	return (C.AddressIterator__Handle)(registerHandle(obj))
 }
+
+func lookupWalletAddressMocksHandle(handle C.WalletAddressMocks__Handle) (*mocks.WalletAddress, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.WalletAddress); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerWalletAddressMocksHandle(obj *mocks.WalletAddress) C.WalletAddressMocks__Handle {
+	return (C.WalletAddressMocks__Handle)(registerHandle(obj))
+}
