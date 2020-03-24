@@ -821,3 +821,17 @@ func lookupSecKeyMocksHandle(handle C.SecKeyMocks__Handle) (*mocks.SecKey, bool)
 func registerSecKeyMocksHandle(obj *mocks.SecKey) C.SecKeyMocks__Handle {
 	return (C.SecKeyMocks__Handle)(registerHandle(obj))
 }
+
+func lookupSeedGeneratorMocksHandle(handle C.SeedGeneratorMocks__Handle) (*mocks.SeedGenerator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.SeedGenerator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerSeedGeneratorMocksHandle(obj *mocks.SeedGenerator) C.SeedGeneratorMocks__Handle {
+	return (C.SeedGeneratorMocks__Handle)(registerHandle(obj))
+}

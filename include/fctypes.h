@@ -450,6 +450,11 @@ typedef Handle PubKeyMocks__Handle;
  */
 typedef Handle SecKeyMocks__Handle;
 
+/**
+ * SeedGeneratorMocks__Handle Handle, struct mocks.SeedGenerator
+ */
+typedef Handle SeedGeneratorMocks__Handle;
+
 // Callbacks
 
 /**
