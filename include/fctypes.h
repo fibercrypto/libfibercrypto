@@ -465,6 +465,11 @@ typedef Handle StringAddressMocks__Handle;
  */
 typedef Handle TransactionMocks__Handle;
 
+/**
+ * TransactionInputMocks__Handle Handle, struct mocks.TransactionInput
+ */
+typedef Handle TransactionInputMocks__Handle;
+
 // Callbacks
 
 /**

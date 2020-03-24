@@ -861,3 +861,16 @@ func lookupTransactionMocksHandle(handle C.TransactionMocks__Handle) (*mocks.Tra
 func registerTransactionMocksHandle(obj *mocks.Transaction) C.TransactionMocks__Handle {
 	return (C.TransactionMocks__Handle)(registerHandle(obj))
 }
+func lookupTransactionInputMocksHandle(handle C.TransactionInputMocks__Handle) (*mocks.TransactionInput, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.TransactionInput); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerTransactionInputMocksHandle(obj *mocks.TransactionInput) C.TransactionInputMocks__Handle {
+	return (C.TransactionInputMocks__Handle)(registerHandle(obj))
+}
