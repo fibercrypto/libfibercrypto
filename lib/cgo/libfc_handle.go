@@ -970,3 +970,31 @@ func lookupTxnSignerIteratorMocksHandle(handle C.TxnSignerIteratorMocks__Handle)
 func registerTxnSignerIteratorMocksHandle(obj *mocks.TxnSignerIterator) C.TxnSignerIteratorMocks__Handle {
 	return (C.TxnSignerIteratorMocks__Handle)(registerHandle(obj))
 }
+
+func lookupWalletMocksHandle(handle C.WalletMocks__Handle) (*mocks.Wallet, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.Wallet); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerWalletMocksHandle(obj *mocks.Wallet) C.WalletMocks__Handle {
+	return (C.WalletMocks__Handle)(registerHandle(obj))
+}
+
+func lookupAddressIteratorHandle(handle C.AddressIterator__Handle) (*core.AddressIterator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.AddressIterator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerAddressIteratorHandle(obj *core.AddressIterator) C.AddressIterator__Handle {
+	return (C.AddressIterator__Handle)(registerHandle(obj))
+}

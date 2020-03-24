@@ -504,11 +504,30 @@ typedef Handle TransactionOutputIteratorMocks__Handle;
  * mocks.TxnSigner
  */
 typedef Handle TxnSignerMocks__Handle;
+
 /**
  * TxnSignerIteratorMocks__Handle Handle, struct
  * mocks.TxnSignerIterator
  */
 typedef Handle TxnSignerIteratorMocks__Handle;
+
+/**
+ * WalletMocks__Handle Handle, struct
+ * mocks.Wallet
+ */
+typedef Handle WalletMocks__Handle;
+
+/**
+ * WalletMocks__Handle Handle, struct
+ * mocks.Wallet
+ */
+typedef Handle WalletMocks__Handle;
+
+/**
+ * AddressIterator__Handle Handle, interface
+ * core.AddressIterator
+ */
+typedef Handle AddressIterator__Handle;
 
 // Callbacks
 
