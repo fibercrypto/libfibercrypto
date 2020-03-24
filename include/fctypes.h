@@ -501,9 +501,14 @@ typedef Handle TransactionOutputIteratorMocks__Handle;
 
 /**
  * TxnSignerMocks__Handle Handle, struct
- * mocks.TxnSignerIterator
+ * mocks.TxnSigner
  */
 typedef Handle TxnSignerMocks__Handle;
+/**
+ * TxnSignerIteratorMocks__Handle Handle, struct
+ * mocks.TxnSignerIterator
+ */
+typedef Handle TxnSignerIteratorMocks__Handle;
 
 // Callbacks
 

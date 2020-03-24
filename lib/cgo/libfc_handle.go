@@ -956,3 +956,17 @@ func lookupTxnSignerMocksHandle(handle C.TxnSignerMocks__Handle) (*mocks.TxnSign
 func registerTxnSignerMocksHandle(obj *mocks.TxnSigner) C.TxnSignerMocks__Handle {
 	return (C.TxnSignerMocks__Handle)(registerHandle(obj))
 }
+
+func lookupTxnSignerIteratorMocksHandle(handle C.TxnSignerIteratorMocks__Handle) (*mocks.TxnSignerIterator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.TxnSignerIterator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerTxnSignerIteratorMocksHandle(obj *mocks.TxnSignerIterator) C.TxnSignerIteratorMocks__Handle {
+	return (C.TxnSignerIteratorMocks__Handle)(registerHandle(obj))
+}
