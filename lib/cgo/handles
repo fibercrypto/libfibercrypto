@@ -72,3 +72,4 @@ CGOGEN HANDLES core__TransactionInput|TransactionInput
 CGOGEN HANDLES mocks__TransactionIterator|TransactionIteratorMocks
 CGOGEN HANDLES mocks__TransactionOutput|TransactionOutputMocks
 CGOGEN HANDLES mocks__TransactionOutputIterator|TransactionOutputIteratorMocks
+CGOGEN HANDLES mocks__TxnSigner|TxnSignerMocks

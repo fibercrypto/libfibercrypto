@@ -942,3 +942,17 @@ func lookupTransactionOutputIteratorMocksHandle(handle C.TransactionOutputIterat
 func registerTransactionOutputIteratorMocksHandle(obj *mocks.TransactionOutputIterator) C.TransactionOutputIteratorMocks__Handle {
 	return (C.TransactionOutputIteratorMocks__Handle)(registerHandle(obj))
 }
+
+func lookupTxnSignerMocksHandle(handle C.TxnSignerMocks__Handle) (*mocks.TxnSigner, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.TxnSigner); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerTxnSignerMocksHandle(obj *mocks.TxnSigner) C.TxnSignerMocks__Handle {
+	return (C.TxnSignerMocks__Handle)(registerHandle(obj))
+}
