@@ -1012,3 +1012,17 @@ func lookupWalletAddressMocksHandle(handle C.WalletAddressMocks__Handle) (*mocks
 func registerWalletAddressMocksHandle(obj *mocks.WalletAddress) C.WalletAddressMocks__Handle {
 	return (C.WalletAddressMocks__Handle)(registerHandle(obj))
 }
+
+func lookupWalletEnvMocksHandle(handle C.WalletEnvMocks__Handle) (*mocks.WalletEnv, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.WalletEnv); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerWalletEnvMocksHandle(obj *mocks.WalletEnv) C.WalletEnvMocks__Handle {
+	return (C.WalletEnvMocks__Handle)(registerHandle(obj))
+}
