@@ -460,6 +460,11 @@ typedef Handle SeedGeneratorMocks__Handle;
  */
 typedef Handle StringAddressMocks__Handle;
 
+/**
+ * TransactionMocks__Handle Handle, struct mocks.Transaction
+ */
+typedef Handle TransactionMocks__Handle;
+
 // Callbacks
 
 /**

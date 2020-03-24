@@ -848,3 +848,16 @@ func lookupStringAddressMocksHandle(handle C.StringAddressMocks__Handle) (*mocks
 func registerStringAddressMocksHandle(obj *mocks.StringAddress) C.StringAddressMocks__Handle {
 	return (C.StringAddressMocks__Handle)(registerHandle(obj))
 }
+func lookupTransactionMocksHandle(handle C.TransactionMocks__Handle) (*mocks.Transaction, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.Transaction); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerTransactionMocksHandle(obj *mocks.Transaction) C.TransactionMocks__Handle {
+	return (C.TransactionMocks__Handle)(registerHandle(obj))
+}
