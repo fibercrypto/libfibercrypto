@@ -835,3 +835,16 @@ func lookupSeedGeneratorMocksHandle(handle C.SeedGeneratorMocks__Handle) (*mocks
 func registerSeedGeneratorMocksHandle(obj *mocks.SeedGenerator) C.SeedGeneratorMocks__Handle {
 	return (C.SeedGeneratorMocks__Handle)(registerHandle(obj))
 }
+func lookupStringAddressMocksHandle(handle C.StringAddressMocks__Handle) (*mocks.StringAddress, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.StringAddress); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerStringAddressMocksHandle(obj *mocks.StringAddress) C.StringAddressMocks__Handle {
+	return (C.StringAddressMocks__Handle)(registerHandle(obj))
+}

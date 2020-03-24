@@ -455,6 +455,11 @@ typedef Handle SecKeyMocks__Handle;
  */
 typedef Handle SeedGeneratorMocks__Handle;
 
+/**
+ * StringAddressMocks__Handle Handle, struct mocks.StringAddress
+ */
+typedef Handle StringAddressMocks__Handle;
+
 // Callbacks
 
 /**

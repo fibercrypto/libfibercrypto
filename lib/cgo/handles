@@ -64,3 +64,4 @@ CGOGEN HANDLES mocks__PexNodeSet|PexNodeSetMocks
 CGOGEN HANDLES mocks__PubKey|PubKeyMocks
 CGOGEN HANDLES mocks__SecKey|SecKeyMocks
 CGOGEN HANDLES mocks__SeedGenerator|SeedGeneratorMocks
+CGOGEN HANDLES mocks__StringAddress|StringAddressMocks
