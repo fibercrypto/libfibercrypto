@@ -67,3 +67,5 @@ CGOGEN HANDLES mocks__SeedGenerator|SeedGeneratorMocks
 CGOGEN HANDLES mocks__StringAddress|StringAddressMocks
 CGOGEN HANDLES mocks__Transaction|TransactionMocks
 CGOGEN HANDLES mocks__TransactionInput|TransactionInputMocks
+CGOGEN HANDLES mocks__TransactionInputIterator|TransactionInputIteratorMocks
+CGOGEN HANDLES core__TransactionInput|TransactionInput

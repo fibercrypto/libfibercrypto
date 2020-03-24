@@ -874,3 +874,30 @@ func lookupTransactionInputMocksHandle(handle C.TransactionInputMocks__Handle) (
 func registerTransactionInputMocksHandle(obj *mocks.TransactionInput) C.TransactionInputMocks__Handle {
 	return (C.TransactionInputMocks__Handle)(registerHandle(obj))
 }
+
+func lookupTransactionInputIteratorMocksHandle(handle C.TransactionInputIteratorMocks__Handle) (*mocks.TransactionInputIterator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.TransactionInputIterator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerTransactionInputIteratorMocksHandle(obj *mocks.TransactionInputIterator) C.TransactionInputIteratorMocks__Handle {
+	return (C.TransactionInputIteratorMocks__Handle)(registerHandle(obj))
+}
+func lookupTransactionInputHandle(handle C.TransactionInput__Handle) (*core.TransactionInput, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*core.TransactionInput); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerTransactionInputHandle(obj *core.TransactionInput) C.TransactionInput__Handle {
+	return (C.TransactionInput__Handle)(registerHandle(obj))
+}
