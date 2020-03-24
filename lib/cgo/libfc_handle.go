@@ -901,3 +901,16 @@ func lookupTransactionInputHandle(handle C.TransactionInput__Handle) (*core.Tran
 func registerTransactionInputHandle(obj *core.TransactionInput) C.TransactionInput__Handle {
 	return (C.TransactionInput__Handle)(registerHandle(obj))
 }
+func lookupTransactionIteratorMocksHandle(handle C.TransactionIteratorMocks__Handle) (*mocks.TransactionIterator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.TransactionIterator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerTransactionIteratorMocksHandle(obj *mocks.TransactionIterator) C.TransactionIteratorMocks__Handle {
+	return (C.TransactionIteratorMocks__Handle)(registerHandle(obj))
+}
