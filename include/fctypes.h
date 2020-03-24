@@ -483,9 +483,15 @@ typedef Handle TransactionInput__Handle;
 
 /**
  * TransactionIteratorMocks__Handle Handle, struct
- * mocks.TransactionIteratorMocks
+ * mocks.TransactionIterator
  */
 typedef Handle TransactionIteratorMocks__Handle;
+
+/**
+ * TransactionOutputMocks__Handle Handle, struct
+ * mocks.TransactionOutput
+ */
+typedef Handle TransactionOutputMocks__Handle;
 
 // Callbacks
 

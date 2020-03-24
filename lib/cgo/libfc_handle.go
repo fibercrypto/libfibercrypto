@@ -914,3 +914,17 @@ func lookupTransactionIteratorMocksHandle(handle C.TransactionIteratorMocks__Han
 func registerTransactionIteratorMocksHandle(obj *mocks.TransactionIterator) C.TransactionIteratorMocks__Handle {
 	return (C.TransactionIteratorMocks__Handle)(registerHandle(obj))
 }
+
+func lookupTransactionOutputMocksHandle(handle C.TransactionOutputMocks__Handle) (*mocks.TransactionOutput, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.TransactionOutput); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerTransactionOutputMocksHandle(obj *mocks.TransactionOutput) C.TransactionOutputMocks__Handle {
+	return (C.TransactionOutputMocks__Handle)(registerHandle(obj))
+}
