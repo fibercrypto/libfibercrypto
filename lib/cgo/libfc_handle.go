@@ -1026,3 +1026,17 @@ func lookupWalletEnvMocksHandle(handle C.WalletEnvMocks__Handle) (*mocks.WalletE
 func registerWalletEnvMocksHandle(obj *mocks.WalletEnv) C.WalletEnvMocks__Handle {
 	return (C.WalletEnvMocks__Handle)(registerHandle(obj))
 }
+
+func lookupWalletIteratorMocksHandle(handle C.WalletIteratorMocks__Handle) (*mocks.WalletIterator, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.WalletIterator); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerWalletIteratorMocksHandle(obj *mocks.WalletIterator) C.WalletIteratorMocks__Handle {
+	return (C.WalletIteratorMocks__Handle)(registerHandle(obj))
+}

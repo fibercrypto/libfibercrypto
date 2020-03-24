@@ -77,3 +77,4 @@ CGOGEN HANDLES mocks__TxnSignerIterator|TxnSignerIteratorMocks
 CGOGEN HANDLES mocks__Wallet|WalletMocks
 CGOGEN HANDLES mocks__WalletAddress|WalletAddressMocks
 CGOGEN HANDLES mocks__WalletEnv|WalletEnvMocks
+CGOGEN HANDLES mocks__WalletIterator|WalletIteratorMocks

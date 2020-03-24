@@ -541,6 +541,12 @@ typedef Handle WalletAddressMocks__Handle;
  */
 typedef Handle WalletEnvMocks__Handle;
 
+/**
+ * WalletIteratorMocks__Handle Handle, struct
+ * mocks.WalletIterator
+ */
+typedef Handle WalletIteratorMocks__Handle;
+
 // Callbacks
 
 /**
