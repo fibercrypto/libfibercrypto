@@ -493,6 +493,12 @@ typedef Handle TransactionIteratorMocks__Handle;
  */
 typedef Handle TransactionOutputMocks__Handle;
 
+/**
+ * TransactionOutputIteratorMocks__Handle Handle, struct
+ * mocks.TransactionOutputIterator
+ */
+typedef Handle TransactionOutputIteratorMocks__Handle;
+
 // Callbacks
 
 /**
