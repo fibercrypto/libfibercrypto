@@ -1068,3 +1068,17 @@ func lookupWalletSetMocksHandle(handle C.WalletSetMocks__Handle) (*mocks.WalletS
 func registerWalletSetMocksHandle(obj *mocks.WalletSet) C.WalletSetMocks__Handle {
 	return (C.WalletSetMocks__Handle)(registerHandle(obj))
 }
+
+func lookupWalletStorageMocksHandle(handle C.WalletStorageMocks__Handle) (*mocks.WalletStorage, bool) {
+	obj, ok := lookupHandle(C.Handle(handle))
+	if ok {
+		if obj, isOK := (obj).(*mocks.WalletStorage); isOK {
+			return obj, true
+		}
+	}
+	return nil, false
+}
+
+func registerWalletStorageMocksHandle(obj *mocks.WalletStorage) C.WalletStorageMocks__Handle {
+	return (C.WalletStorageMocks__Handle)(registerHandle(obj))
+}

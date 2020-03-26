@@ -559,6 +559,12 @@ typedef Handle WalletOutputMocks__Handle;
  */
 typedef Handle WalletSetMocks__Handle;
 
+/**
+ *WalletStorageMocks__Handle Handle, struct
+ * mocks.WalletStorage
+ */
+typedef Handle WalletStorageMocks__Handle;
+
 // Callbacks
 
 /**

@@ -80,3 +80,4 @@ CGOGEN HANDLES mocks__WalletEnv|WalletEnvMocks
 CGOGEN HANDLES mocks__WalletIterator|WalletIteratorMocks
 CGOGEN HANDLES mocks__WalletOutput|WalletOutputMocks
 CGOGEN HANDLES mocks__WalletSet|WalletSetMocks
+CGOGEN HANDLES mocks__WalletStorage|WalletStorageMocks
