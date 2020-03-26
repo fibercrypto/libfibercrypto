@@ -78,3 +78,4 @@ CGOGEN HANDLES mocks__Wallet|WalletMocks
 CGOGEN HANDLES mocks__WalletAddress|WalletAddressMocks
 CGOGEN HANDLES mocks__WalletEnv|WalletEnvMocks
 CGOGEN HANDLES mocks__WalletIterator|WalletIteratorMocks
+CGOGEN HANDLES mocks__WalletOutput|WalletOutputMocks

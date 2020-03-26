@@ -547,6 +547,12 @@ typedef Handle WalletEnvMocks__Handle;
  */
 typedef Handle WalletIteratorMocks__Handle;
 
+/**
+ *WalletOutputMocks__Handle Handle, struct
+ * mocks.WalletOutput
+ */
+typedef Handle WalletOutputMocks__Handle;
+
 // Callbacks
 
 /**
