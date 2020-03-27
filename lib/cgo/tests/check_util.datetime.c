@@ -15,8 +15,6 @@ START_TEST(TestParseDate)
 {
   printf("Load TestParseDate \n");
   GoUint64_ some_date = 1577665665;
-  time_t datetime = time(some_date);
-  printf("The value is %d\n", datetime);
 }
 END_TEST
 
