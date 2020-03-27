@@ -27,9 +27,21 @@ START_TEST(TestNewGenericAddress) {
   tests[0].want.Address.p = "2kvLEyXwAYvHfJuFCkjnYNRTUfHPyWgVwKt";
   tests[0].want.Address.n = 35;
 
-  for (int i = 0; i < 1; i++) {
-    printf("Load %d\n", i);
+  tests[1].name = "valid_Addrs2";
+  tests[1].args.p = "R6aHqKWSQfvpdo2fGSrq4F1RYXkBWR9HHJ";
+  tests[1].args.n = 34;
+  tests[1].want.Address.p = "R6aHqKWSQfvpdo2fGSrq4F1RYXkBWR9HHJ";
+  tests[1].want.Address.n = 34;
+
+  tests[2].name = "invalid_Addrs";
+  tests[2].args.p = "";
+  tests[2].args.n = 0;
+  tests[2].want.Address.p = "";
+  tests[2].want.Address.n = 0;
+
+  for (int i = 0; i < 3; i++) {
     test_case tt = tests[i];
+    printf("Load %s iteration # %d\n", tt.name, i);
     util__GenericAddress got;
     GoUint32_ err = FC_util_NewGenericAddress(tt.args, &got);
     ck_assert_int_eq(err, FC_OK);
