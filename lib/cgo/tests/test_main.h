@@ -11,5 +11,6 @@
 #include <string.h>
 
 Suite *check_util_cipher(void);
+Suite *check_util_datetime(void);
 
 #endif

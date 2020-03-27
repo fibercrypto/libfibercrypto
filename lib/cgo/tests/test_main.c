@@ -1,9 +1,11 @@
 #include "test_main.h"
 #include <check.h>
 // run suite
-int main(void) {
+int main(void)
+{
   int number_failed = 0;
   SRunner *sr = srunner_create(check_util_cipher());
+  srunner_add_suite(sr, check_util_datetime());
   srunner_set_fork_status(sr, CK_NOFORK);
   srunner_run_all(sr, CK_VERBOSE);
   number_failed = srunner_ntests_failed(sr);
