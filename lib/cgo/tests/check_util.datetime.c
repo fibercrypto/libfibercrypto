@@ -15,6 +15,10 @@ START_TEST(TestParseDate)
 {
   printf("Load TestParseDate \n");
   GoUint64_ some_date = 1577665665;
+  GoInt ny, nm, nd, nh, nmin, ns;
+  GoUint32_ err = FC_util_ParseDate(some_date, &ny, &nm, &nd, &nh, &nmin, &ns);
+  ck_assert_int_eq(err, FC_OK);
+  printf("The datetime is %d-%d-%d %d:%d:%d\n", ny, nm, nd, nh, nmin, ns);
 }
 END_TEST
 
