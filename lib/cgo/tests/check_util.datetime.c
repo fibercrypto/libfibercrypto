@@ -11,8 +11,7 @@
 #include "fctest.h"
 #include "libfibercrypto.h"
 
-START_TEST(TestParseDate)
-{
+START_TEST(TestParseDate) {
   printf("Load TestParseDate \n");
   GoUint64_ some_date = 1577665665;
   GoInt ny, nm, nd, nh, nmin, ns;
@@ -22,8 +21,7 @@ START_TEST(TestParseDate)
 }
 END_TEST
 
-Suite *check_util_datetime(void)
-{
+Suite *check_util_datetime(void) {
   Suite *s = suite_create("Load check_util_datetime");
   TCase *tc;
   tc = tcase_create("check_util_datetime");
