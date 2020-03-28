@@ -17,7 +17,7 @@ LIBSRC_SKYSRCREL_PATH  = ../../../..
 # --- Relative path to libfibercrypto vendor directory
 LIBVENDOR_REL_PATH     = vendor
 # --- Relative path to Skycoin source code submodule
-SKYSRC_REL_PATH        = $(LIBVENDOR_REL_PATH)/github.com/fibercryto/FiberCryptoWallet
+SKYSRC_REL_PATH        = $(LIBVENDOR_REL_PATH)/github.com/fibercryto/fibercryptowallet
 # --- Relative path to Skycoin vendor directory
 SKYVENDOR_REL_PATH     = $(SKYSRC_REL_PATH)/vendor
 
@@ -48,7 +48,8 @@ CGO_ENABLED=1
 PKG_CLANG_FORMAT = clang-format
 PKG_CLANG_LINTER = clang-tidy
 PKG_LIB_TEST = check
-
+QT_DIR = $(GOPATH)/src/github.com/therecipe/env_linux_amd64_513
+QT_VERSION = 5.13.0
 ifeq ($(UNAME_S),Linux)
   LDLIBS=$(LIBC_LIBS) -lpthread
   LDPATH=$(shell printenv LD_LIBRARY_PATH)
@@ -104,10 +105,10 @@ build-libc-dbg: configure-build build-libc-static build-libc-shared
 test-libc: build-libc ## Run tests for libfibercrypto C client library
 	echo "Compiling with $(CC) $(CC_VERSION) $(STDC_FLAG)"
 	$(eval TESTS_SRC := $(shell ls $(LIB_DIR)/cgo/tests/*.c))
-	$(CC) -o $(BIN_DIR)/test_libfibercrypto_shared $(TESTS_SRC) $(LIB_DIR)/cgo/tests/testutils/*.c -lfibercrypto                    $(LDLIBS) $(LDFLAGS)
-	$(CC) -o $(BIN_DIR)/test_libfibercrypto_static $(TESTS_SRC) $(LIB_DIR)/cgo/tests/testutils/*.c $(BUILDLIB_DIR)/libfibercrypto.a $(LDLIBS) $(LDFLAGS)
-	$(LDPATHVAR)="$(LDPATH):$(BUILD_DIR)/usr/lib:$(BUILDLIB_DIR)" $(BIN_DIR)/test_libfibercrypto_shared -lfibercrypto
-	$(LDPATHVAR)="$(LDPATH):$(BUILD_DIR)/usr/lib"         $(BIN_DIR)/test_libfibercrypto_static
+	$(CC) -Wall -o $(BIN_DIR)/test_libfibercrypto_shared $(TESTS_SRC) $(LIB_DIR)/cgo/tests/testutils/*.c -lfibercrypto                    $(LDLIBS) $(LDFLAGS) -I$(QT_DIR)/$(QT_VERSION)/gcc_64/lib
+	# $(CC) -o $(BIN_DIR)/test_libfibercrypto_static $(TESTS_SRC) $(LIB_DIR)/cgo/tests/testutils/*.c $(BUILDLIB_DIR)/libfibercrypto.a $(LDLIBS) $(LDFLAGS)
+	$(LDPATHVAR)="$(LDPATH):$(BUILD_DIR)/usr/lib:$(BUILDLIB_DIR)":$(QT_DIR)/$(QT_VERSION)/gcc_64/lib $(BIN_DIR)/test_libfibercrypto_shared -lfibercrypto -I$(QT_DIR)/$(QT_VERSION)/gcc_64/lib
+	# $(LDPATHVAR)="$(LDPATH):$(BUILD_DIR)/usr/lib":$(QT_DIR)/$(QT_VERSION)/gcc_64/lib         $(BIN_DIR)/test_libfibercrypto_static
 
 
 test: test-libc ## Run all test for libfibercrypto
@@ -120,11 +121,8 @@ docs-libc: ## Generate libfibercrypto documentation
 docs: docs-libc ## Generate documentation for all libraries
 
 lint: ## Run linters. Use make install-linters first.
-	vendorcheck ./...
 	# lib/cgo needs separate linting rules
-	golangci-lint run -c .golangci.libcgo.yml ./lib/cgo/...
-	# The govet version in golangci-lint is out of date and has spurious warnings, run it separately
-	go vet -all ./...
+	golangci-lint run -c .golangci.yml ./lib/cgo/...
 
 lint-libc: format-libc
 	# Linter LIBC
@@ -152,7 +150,7 @@ install-deps-Darwin: ## Install deps on Mac OSX
 
 install-linters: install-linters-$(UNAME_S) ## Install linters
 	go get -u github.com/FiloSottile/vendorcheck
-	cat ./ci-scripts/install-golangci-lint.sh | sh -s -- -b $(GOPATH)/bin v1.10.2
+	curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh| sh -s -- -b $(GOPATH)/bin v1.18.0
 
 install-deps-libc: install-deps-libc-$(UNAME_S) ## Install deps for libc
 
@@ -166,7 +164,7 @@ check-0.12.0/src/.libs/libcheck.so: ## Install libcheck
 install-deps-libc-Darwin: configure-build ## Install locally dependencies for testing libfibercrypto
 	brew install check
 
-install-deps: install-deps-libc ## Install deps for libc and skyapi
+install-deps: install-deps-$(UNAME_S) install-deps-libc ## Install deps for libc and skyapi
 
 format: ## Formats the code. Must have goimports installed (use make install-linters).
 	goimports -w -local github.com/fibercryto/FiberCryptoWallet ./lib

@@ -133,7 +133,6 @@ typedef struct {
               ///< size.
 } GoSlice_;
 
-
 #include "fctypes.gen.h"
 
 /**
@@ -147,5 +146,438 @@ typedef GoInt64_ Handle;
  * String Slice Handle
  */
 typedef Handle Strings__Handle;
+
+/**
+ * AltcoinPlugin__Handle Handle, interface core.AltcoinPlugin
+ */
+typedef Handle AltcoinPlugin__Handle;
+
+/**
+ * TxnSigner__Handle Handle, interface core.TxnSigner
+ */
+typedef Handle TxnSigner__Handle;
+
+/**
+ * Wallet__Handle Handle, interface core.Wallet
+ */
+typedef Handle Wallet__Handle;
+
+/**
+ * CryptoAccount__Handle Handle, interface core.CryptoAccount
+ */
+typedef Handle CryptoAccount__Handle;
+
+/**
+ * Address__Handle Handle, interface core.Address
+ */
+typedef Handle Address__Handle;
+
+/**
+ * GenericOutput__Handle Handle, interface util.GenericOutput
+ */
+typedef Handle GenericOutput__Handle;
+
+/**
+ * TxnSignerIterator__Handle Handle, interface core.TxnSignerIterator
+ */
+typedef Handle TxnSignerIterator__Handle;
+
+/**
+ * Transaction__Handle Handle, interface core.Transaction
+ */
+typedef Handle Transaction__Handle;
+
+/**
+ * KeyValueStore__Handle Handle, interface core.KeyValueStore
+ */
+typedef Handle KeyValueStore__Handle;
+
+/**
+ * InputSignDescriptor__Handle Handle, interface core.InputSignDescriptor
+ */
+typedef Handle InputSignDescriptor__Handle;
+
+/**
+ * SimpleWalletOutput__Handle Handle, struct util.SimpleWalletOutput
+ */
+typedef Handle SimpleWalletOutput__Handle;
+
+/**
+ * TransactionOutput__Handle Handle, interface core.TransactionOutput
+ */
+typedef Handle TransactionOutput__Handle;
+
+/**
+ * SimpleWalletAddress__Handle Handle, struct util.SimpleWalletAddress
+ */
+typedef Handle SimpleWalletAddress__Handle;
+
+/**
+ * BalanceSnapshot__Handle Handle, struct util.BalanceSnapshot
+ */
+typedef Handle BalanceSnapshot__Handle;
+
+/**
+ * AddressBook__Handle Handle, interface core.AddressBook
+ */
+typedef Handle AddressBook__Handle;
+
+/**
+ * Contact__Handle Handle, interface core.Contact
+ */
+typedef Handle Contact__Handle;
+
+/**
+ * Storage__Handle Handle, interface core.Storage
+ */
+typedef Handle Storage__Handle;
+
+/**
+ * CryptoAccountMocks__Handle Handle, interface mocks.CryptoAccount
+ */
+typedef Handle CryptoAccountMocks__Handle;
+
+/**
+ * TransactionIterator__Handle Handle, interface core.TransactionIterator
+ */
+typedef Handle TransactionIterator__Handle;
+
+/**
+ * TransactionOutputIterator__Handle Handle, interface
+ * core.TransactionOutputIterator
+ */
+typedef Handle TransactionOutputIterator__Handle;
+
+/**
+ * AddressMocks__Handle Handle, interface mocks.Address
+ */
+typedef Handle AddressMocks__Handle;
+
+/**
+ * AddressBookMocks__Handle Handle, interface mocks.AddressBook
+ */
+typedef Handle AddressBookMocks__Handle;
+
+/**
+ * PubKey__Handle Handle, interface core.PubKey
+ */
+typedef Handle PubKey__Handle;
+
+/**
+ * AddressIteratorMocks__Handle Handle, interface mocks.AddressIterator
+ */
+typedef Handle AddressIteratorMocks__Handle;
+
+/**
+ * AltcoinManagerMocks__Handle Handle, interface mocks.AltcoinManager
+ */
+typedef Handle AltcoinManagerMocks__Handle;
+
+/**
+ * AltcoinPluginMocks__Handle Handle, interface mocks.AltcoinPlugin
+ */
+typedef Handle AltcoinPluginMocks__Handle;
+
+/**
+ * SecKey__Handle Handle, interface core.SecKey
+ */
+typedef Handle SecKey__Handle;
+
+/**
+ * AltcoinManager__Handle Handle, interface core.AltcoinManager
+ */
+typedef Handle AltcoinManager__Handle;
+
+/**
+ * BlockchainSignService__Handle Handle, interface core.BlockchainSignService
+ */
+typedef Handle BlockchainSignService__Handle;
+
+/**
+ * BlockchainTransactionAPI__Handle Handle, interface
+ * core.BlockchainTransactionAPI
+ */
+typedef Handle BlockchainTransactionAPI__Handle;
+
+/**
+ * PEX__Handle Handle, interface core.PEX
+ */
+typedef Handle PEX__Handle;
+
+/**
+ * BlockMocks__Handle Handle, interface mocks.Block
+ */
+typedef Handle BlockMocks__Handle;
+
+/**
+ * BlockchainSignServiceMocks__Handle Handle, struct mocks.BlockchainSignService
+ */
+typedef Handle BlockchainSignServiceMocks__Handle;
+
+/**
+ * BlockchainStatusMocks__Handle Handle, struct mocks.BlockchainStatus
+ */
+typedef Handle BlockchainStatusMocks__Handle;
+
+/**
+ * Block__Handle Handle, interface core.Block
+ */
+typedef Handle Block__Handle;
+
+/**
+ * BlockchainTransactionAPIMocks__Handle Handle, struct
+ * mocks.BlockchainTransactionAPI
+ */
+typedef Handle BlockchainTransactionAPIMocks__Handle;
+
+/**
+ * WalletAddress__Handle Handle, interface core.WalletAddress
+ */
+typedef Handle WalletAddress__Handle;
+
+/**
+ * WalletOutput__Handle Handle, interface core.WalletOutput
+ */
+typedef Handle WalletOutput__Handle;
+
+/**
+ * ContactMocks__Handle Handle, struct mocks.Contact
+ */
+typedef Handle ContactMocks__Handle;
+
+/**
+ * StringAddress__Handle Handle, interface core.StringAddress
+ */
+typedef Handle StringAddress__Handle;
+
+/**
+ * PexNodeIterator__Handle Handle, interface core.PexNodeIterator
+ */
+typedef Handle PexNodeIterator__Handle;
+
+/**
+ * PexNodeSet__Handle Handle, interface core.PexNodeSet
+ */
+typedef Handle PexNodeSet__Handle;
+
+/**
+ * PexNode__Handle Handle, interface core.PexNode
+ */
+typedef Handle PexNode__Handle;
+
+/**
+ * PooledObjectFactory__Handle Handle, interface core.PooledObjectFactory
+ */
+typedef Handle PooledObjectFactory__Handle;
+
+/**
+ * MultiPool__Handle Handle, interface core.MultiPool
+ */
+typedef Handle MultiPool__Handle;
+
+/**
+ * MultiPoolSection__Handle Handle, interface core.MultiPoolSection
+ */
+typedef Handle MultiPoolSection__Handle;
+
+/**
+ * MultiConnectionsPool__Handle Handle, struct core.MultiConnectionsPool
+ */
+typedef Handle MultiConnectionsPool__Handle;
+
+/**
+ * PoolSection__Handle Handle, struct core.PoolSection
+ */
+typedef Handle PoolSection__Handle;
+
+/**
+ * WalletIterator__Handle Handle, interface core.WalletIterator
+ */
+typedef Handle WalletIterator__Handle;
+
+/**
+ * WalletSet__Handle Handle, interface core.WalletSet
+ */
+typedef Handle WalletSet__Handle;
+
+/**
+ * WalletStorage__Handle Handle, interface core.WalletStorage
+ */
+typedef Handle WalletStorage__Handle;
+
+/**
+ * SeedGenerator__Handle Handle, interface core.SeedGenerator
+ */
+typedef Handle SeedGenerator__Handle;
+
+/**
+ * WalletEnv__Handle Handle, interface core.WalletEnv
+ */
+typedef Handle WalletEnv__Handle;
+
+/**
+ * MultiPoolMocks__Handle Handle, struct mocks.MultiPool
+ */
+typedef Handle MultiPoolMocks__Handle;
+
+/**
+ * PEXMocks__Handle Handle, struct mocks.PEX
+ */
+typedef Handle PEXMocks__Handle;
+
+/**
+ * PexNodeMocks__Handle Handle, struct mocks.PexNode
+ */
+typedef Handle PexNodeMocks__Handle;
+
+/**
+ * PexNodeIteratorMocks__Handle Handle, struct mocks.PexNodeIterator
+ */
+typedef Handle PexNodeIteratorMocks__Handle;
+
+/**
+ * PexNodeSetMocks__Handle Handle, struct mocks.PexNodeSet
+ */
+typedef Handle PexNodeSetMocks__Handle;
+
+/**
+ * PubKeyMocks__Handle Handle, struct mocks.PubKey
+ */
+typedef Handle PubKeyMocks__Handle;
+
+/**
+ * SecKeyMocks__Handle Handle, struct mocks.SecKey
+ */
+typedef Handle SecKeyMocks__Handle;
+
+/**
+ * SeedGeneratorMocks__Handle Handle, struct mocks.SeedGenerator
+ */
+typedef Handle SeedGeneratorMocks__Handle;
+
+/**
+ * StringAddressMocks__Handle Handle, struct mocks.StringAddress
+ */
+typedef Handle StringAddressMocks__Handle;
+
+/**
+ * TransactionMocks__Handle Handle, struct mocks.Transaction
+ */
+typedef Handle TransactionMocks__Handle;
+
+/**
+ * TransactionInputMocks__Handle Handle, struct mocks.TransactionInput
+ */
+typedef Handle TransactionInputMocks__Handle;
+
+/**
+ * TransactionInputIteratorMocks__Handle Handle, struct
+ * mocks.TransactionInputIterator
+ */
+typedef Handle TransactionInputIteratorMocks__Handle;
+
+/**
+ * TransactionInput__Handle Handle, interface core.TransactionInput
+ */
+typedef Handle TransactionInput__Handle;
+
+/**
+ * TransactionIteratorMocks__Handle Handle, struct
+ * mocks.TransactionIterator
+ */
+typedef Handle TransactionIteratorMocks__Handle;
+
+/**
+ * TransactionOutputMocks__Handle Handle, struct
+ * mocks.TransactionOutput
+ */
+typedef Handle TransactionOutputMocks__Handle;
+
+/**
+ * TransactionOutputIteratorMocks__Handle Handle, struct
+ * mocks.TransactionOutputIterator
+ */
+typedef Handle TransactionOutputIteratorMocks__Handle;
+
+/**
+ * TxnSignerMocks__Handle Handle, struct
+ * mocks.TxnSigner
+ */
+typedef Handle TxnSignerMocks__Handle;
+
+/**
+ * TxnSignerIteratorMocks__Handle Handle, struct
+ * mocks.TxnSignerIterator
+ */
+typedef Handle TxnSignerIteratorMocks__Handle;
+
+/**
+ * WalletMocks__Handle Handle, struct
+ * mocks.Wallet
+ */
+typedef Handle WalletMocks__Handle;
+
+/**
+ * WalletMocks__Handle Handle, struct
+ * mocks.Wallet
+ */
+typedef Handle WalletMocks__Handle;
+
+/**
+ * AddressIterator__Handle Handle, interface
+ * core.AddressIterator
+ */
+typedef Handle AddressIterator__Handle;
+
+/**
+ * WalletAddressMocks__Handle Handle, struct
+ * mocks.WalletAddress
+ */
+typedef Handle WalletAddressMocks__Handle;
+
+/**
+ * WalletEnvMocks__Handle Handle, struct
+ * mocks.WalletEnv
+ */
+typedef Handle WalletEnvMocks__Handle;
+
+/**
+ * WalletIteratorMocks__Handle Handle, struct
+ * mocks.WalletIterator
+ */
+typedef Handle WalletIteratorMocks__Handle;
+
+/**
+ *WalletOutputMocks__Handle Handle, struct
+ * mocks.WalletOutput
+ */
+typedef Handle WalletOutputMocks__Handle;
+
+/**
+ *WalletSetMocks__Handle Handle, struct
+ * mocks.WalletSet
+ */
+typedef Handle WalletSetMocks__Handle;
+
+/**
+ *WalletStorageMocks__Handle Handle, struct
+ * mocks.WalletStorage
+ */
+typedef Handle WalletStorageMocks__Handle;
+
+// Callbacks
+
+/**
+ *  PasswordReaderFunc callback , func(string, KeyValueStore) (string, error)
+ */
+
+typedef GoUint32_ (*PasswordReaderFunc)(GoString_ pString,
+                                        KeyValueStore__Handle pKeyValue,
+                                        GoString_ *pStringOut, void *context);
+
+typedef struct {
+  PasswordReaderFunc callback;
+  void *context;
+} PasswordReader;
 
 #endif

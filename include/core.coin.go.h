@@ -1,0 +1,2 @@
+typedef GoUint64_ core__Timestamp;
+typedef GoUint32_ core__TransactionStatus;

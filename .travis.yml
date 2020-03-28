@@ -1,14 +1,15 @@
-sudo: required
 language: go
-go:
+cache:
+  directories:
+    - $GOPATH/bin
 matrix:
   include:
     - os: linux
-      dist: xenial
+      dist: bionic
     - os: osx
 before_install:
   - ./ci-scripts/install-travis-gcc.sh
-  - eval "CC=gcc-6 && CXX=g++-6"
+  - go get -u github.com/golang/dep/cmd/dep
 env:
   global:
     - BUILD_DIR: build
@@ -19,15 +20,15 @@ env:
     - PATH_DIR: "$GOPATH/src/github.com/fibercypto/libfibercrypto/"
 install:
   # Install gox
-  - go get github.com/gz-c/gox
-  - go get -t ./...
+  - go get github.com/mitchellh/gox
   - make install-linters
-  - make install-deps-libc
+  - make dep
+  - make install-deps
+  - go get -t -d -v ./...
 script:
   - make build
   - make lint
   - make test
-  - make lint-libc
 
 before_deploy:
   - export VERSION="$(git describe --tags --exact-match HEAD 2> /dev/null)"
@@ -42,7 +43,6 @@ deploy:
       secure: ZqagrrwPFXs4bgHV9lJkZaex6dxAEUJprSdhsqJLYTkF4uBN5VYNM4KCy+azBabV8pVLxiCCZ8G/ocRw+omQgzJ/1lymNtYez8C/SLAuKzOFxdTxkvyQ9pW5Xr+fjptTEpe/E/lRYvS6LFtQEEpbrtjW/km9HWc7EdMNxUaGhBCRun0YhK3a7JSpQE7JbsyR691Zco8hLb2b5PO8qYx5NoVWHKPMLMYUZhbSZbWs0Viu8s8t9VLVhrSIudAKnQiNs5viWp0YZy6U6mRMuBeZ7wazebx0d/BAj78f+atGOZIiJbHgOxupnhhgR10X7b5B89JggxVe3IFr5t96qz3VV4aTl1yuLZ3i8eYanMIvdirnpPU36bbfAVMJuG7L4hFmZ+pD22ZmiOI4COqHDxSd0gF8DUri+Cf9S+5RF5Kk3YBArQzdue6DjNPBtKyQja1xINfj3Go2LQnaKH+/ffzBJIlw9TICcqf241FS3bNtx0QvUDV/+ezqy0dcD7xKOoUQmLDhyWt5NltNKu/JjoCwj99B9P45GQHJCrSvMu71hwNYlTJxtTJuLIVRXqI5BUEGpnBK99MV+6nycl0ePla4zXTBbJ/uOFzwfj1njAdw2DT4ceTsvtkTAc9qEi3S1hrRL2z3mHQ4loZCTJ9Nn9Cx0WOgfs/bCDvExa7b+AJ3ScE=
     file:
       - libfibercrypto-${VERSION}-${OS}-${ARCH}.tar.gz
-    skip_cleanup: true
     draft: true
     overwrite: true
     on:

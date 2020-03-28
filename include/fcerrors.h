@@ -20,4 +20,7 @@
 #define FC_ERROR 0x7FFFFFFF
 #define FC_BAD_HANDLE 0x7F000001
 #define FC_INVALID_TIMESTRING 0x7F000002
+
+// Define error
+
 #endif
